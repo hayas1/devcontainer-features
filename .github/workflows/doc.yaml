@@ -13,6 +13,8 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref_name }}
       - name: Generate document and validate devcontainer-feature.json
         uses: devcontainers/action@v1
         with:
