@@ -1,0 +1,41 @@
+{
+    "id": "tfenv",
+    "version": "0.0.1",
+    "name": "tfenv",
+    "documentationURL": "https://github.com/hayas1/devcontainer-features/tree/main/src/tfenv",
+    "description": "Install tfenv",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "master",
+                "v3.0.0",
+                "v2.2.3",
+                "v2.2.2"
+            ],
+            "default": "master",
+            "description": "install ref of tfenv github"
+        },
+        "with": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "none",
+                "v1.4.6",
+                "v0.15.5"
+            ],
+            "default": "none",
+            "description": "with terraform"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "HashiCorp.terraform"
+            ]
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
