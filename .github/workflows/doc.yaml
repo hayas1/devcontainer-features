@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: ${{ github.ref_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
       - name: Generate document and validate devcontainer-feature.json
         uses: devcontainers/action@v1
         with:
