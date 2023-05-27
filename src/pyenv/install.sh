@@ -1,5 +1,4 @@
 #! /bin/bash -e
-
 VERSION=${VERSION:-"master"}
 WITH=${WITH:-"none"}
 
