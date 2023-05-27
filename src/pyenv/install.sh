@@ -10,6 +10,7 @@ apt-get update -y && apt-get install -y git &&
 git clone https://github.com/pyenv/pyenv.git "$lib" --branch "${VERSION}" --depth 1
 pushd "$lib" && src/configure && make -C src && popd
 ln -s "$lib/bin/pyenv" "$bin/pyenv"
+eval "$(pyenv init -)"
 ln -s "$lib/shims/python" "$bin/python"
 ln -s "$lib/shims/pip" "$bin/pip"
 
@@ -31,4 +32,3 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 EOF
-zsh "${_REMOTE_USER_HOME}/.zshrc"
