@@ -3,11 +3,14 @@
 VERSION=${VERSION:-"master"}
 WITH=${WITH:-"none"}
 
+lib="${_REMOTE_USER_HOME}/.pyenv"
+bin=/usr/bin
 ### https://github.com/pyenv/pyenv#basic-github-checkout
 apt-get update -y && apt-get install -y git &&
     apt-get clean && rm -rf /var/lib/apt/lists
-git clone https://github.com/pyenv/pyenv.git "${_REMOTE_USER_HOME}/.pyenv" --branch "${VERSION}" --depth 1
-pushd "${_REMOTE_USER_HOME}/.pyenv" && src/configure && make -C src && popd
+git clone https://github.com/pyenv/pyenv.git "$lib" --branch "${VERSION}" --depth 1
+pushd "$lib" && src/configure && make -C src && popd
+ln -s "$lib/bin/pyenv" "$bin/pyenv"
 
 if [ "$WITH" != "none" ]; then
     if [ "$WITH" = "latest" ]; then
