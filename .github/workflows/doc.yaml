@@ -26,7 +26,7 @@ jobs:
         run: git add '*/**/README.md' && git diff $(git branch --show-current) --name-only --exit-code
         continue-on-error: true
       - name: Git commit and push
-        if: steps.diff.outcome == 'failure'
+        # if: steps.diff.outcome == 'failure'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
