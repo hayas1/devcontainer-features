@@ -1,0 +1,37 @@
+name: Commit generated documentation
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+
+jobs:
+  doc:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      packages: write
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+      - name: Generate document and validate devcontainer-feature.json
+        uses: devcontainers/action@v1
+        with:
+          validate-only: "true"
+          base-path-to-features: "./src"
+          generate-docs: "true"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Git commit and push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -ex
+          git config --global user.email github-actions@github.com
+          git config --global user.name github-actions
+          if ! git diff "$(git branch --show-current)" --name-only --exit-code ; then
+            git add '*/**/README.md'
+            git commit -m 'generated from devcontainer-feature.json'
+            git push origin "$(git branch --show-current)"
+          fi
