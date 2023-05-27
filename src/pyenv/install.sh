@@ -11,6 +11,8 @@ apt-get update -y && apt-get install -y git &&
 git clone https://github.com/pyenv/pyenv.git "$lib" --branch "${VERSION}" --depth 1
 pushd "$lib" && src/configure && make -C src && popd
 ln -s "$lib/bin/pyenv" "$bin/pyenv"
+ln -s "$lib/shims/python" "$bin/python"
+ln -s "$lib/shims/pip" "$bin/pip"
 
 if [ "$WITH" != "none" ]; then
     if [ "$WITH" = "latest" ]; then
