@@ -1,5 +1,5 @@
 {
-    "install_with_latest": {
+    "install_with_latest_terraform": {
         "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
         "features": {
             "tfenv": {
