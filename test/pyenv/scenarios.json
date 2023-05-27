@@ -1,0 +1,29 @@
+{
+    "install_with_latest_python": {
+        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "features": {
+            "pyenv": {
+                "version": "master",
+                "with": "latest"
+            }
+        }
+    },
+    "install_with_python37": {
+        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "features": {
+            "pyenv": {
+                "version": "master",
+                "with": "3.7"
+            }
+        }
+    },
+    "install_without_python": {
+        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "features": {
+            "pyenv": {
+                "version": "master",
+                "with": "none"
+            }
+        }
+    }
+}
