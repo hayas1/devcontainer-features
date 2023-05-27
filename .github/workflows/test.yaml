@@ -14,6 +14,7 @@ jobs:
       matrix:
         features:
           - tfenv
+          - pyenv
         baseImage:
           - debian:latest
           - ubuntu:latest
@@ -33,6 +34,7 @@ jobs:
       matrix:
         features:
           - tfenv
+          - pyenv
     steps:
       - uses: actions/checkout@v3
       - name: Install latest devcontainer CLI
