@@ -1,5 +1,5 @@
 #! /bin/bash -e
-VERSION=${VERSION:-"latest"}
+VERSION=${VERSION:-"master"}
 WITH=${WITH:-"none"}
 
 lib=/usr/lib/tfenv
@@ -12,6 +12,6 @@ ln -s "$lib/bin/tfenv" "$bin/tfenv"
 ln -s "$lib/bin/terraform" "$bin/terraform"
 
 if [ "$WITH" != "none" ]; then
-    tfenv install "$VERSION"
-    tfenv use "$VERSION"
+    tfenv install "$WITH"
+    tfenv use "$WITH"
 fi
