@@ -28,7 +28,7 @@ jobs:
           set -x
           git config --global user.email github-actions@github.com
           git config --global user.name github-actions
-          if [ git diff $(git branch --show-current) --name-only --exit-code ] ; then
+          if $(git diff $(git branch --show-current) --name-only --exit-code) ; then
             git add '*/**/README.md'
             git commit -m 'generated from devcontainer-feature.json'
             git push origin $(git branch --show-current)
