@@ -13,7 +13,7 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v3
-      - name: Validate devcontainer-feature.json and generate document
+      - name: Generate document and validate devcontainer-feature.json
         uses: devcontainers/action@v1
         with:
           validate-only: "true"
@@ -21,17 +21,15 @@ jobs:
           generate-docs: "true"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Git add and diff
-        id: diff
-        run: git add '*/**/README.md' && git diff $(git branch --show-current) --name-only --exit-code
-        continue-on-error: true
       - name: Git commit and push
-        # if: steps.diff.outcome == 'failure'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -x
           git config --global user.email github-actions@github.com
           git config --global user.name github-actions
-          git commit -m 'generated from devcontainer-feature.json'
-          git push
+          if [ git diff $(git branch --show-current) --name-only --exit-code ] ; then
+            git add '*/**/README.md'
+            git commit -m 'generated from devcontainer-feature.json'
+            git push origin $(git branch --show-current)
+          fi
