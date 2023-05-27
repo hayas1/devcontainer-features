@@ -25,7 +25,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          set -x
+          set -ex
           git config --global user.email github-actions@github.com
           git config --global user.name github-actions
           if $(git diff $(git branch --show-current) --name-only --exit-code) ; then
