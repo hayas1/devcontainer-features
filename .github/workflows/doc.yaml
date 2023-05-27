@@ -23,7 +23,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Git add and diff
         id: diff
-        run: git add '*/**/README.md' && git diff --name-only --exit-code
+        run: git branch --show-current && git add '*/**/README.md' && git diff --name-only --exit-code
         continue-on-error: true
       - name: Git commit and push
         if: steps.diff.outcome == 'failure'
