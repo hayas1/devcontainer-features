@@ -1,0 +1,20 @@
+{
+    "install_with_latest": {
+        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "features": {
+            "tfenv": {
+                "version": "master",
+                "with": "latest"
+            }
+        }
+    },
+    "install_without_terraform": {
+        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "features": {
+            "tfenv": {
+                "version": "master",
+                "with": "none"
+            }
+        }
+    }
+}
