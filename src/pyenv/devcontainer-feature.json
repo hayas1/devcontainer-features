@@ -1,0 +1,42 @@
+{
+    "id": "pyenv",
+    "version": "0.0.1",
+    "name": "pyenv",
+    "documentationURL": "https://github.com/hayas1/devcontainer-features/tree/main/src/pyenv",
+    "description": "Install pyenv",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "master",
+                "v2.3.18",
+                "v2.3.17",
+                "v2.3.16"
+            ],
+            "default": "master",
+            "description": "install ref of pyenv github"
+        },
+        "with": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "none",
+                "3.11.3",
+                "3.7",
+                "2"
+            ],
+            "default": "none",
+            "description": "with python"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python"
+            ]
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
