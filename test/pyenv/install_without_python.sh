@@ -5,9 +5,6 @@ set -e
 source dev-container-features-test-lib
 export PYENV_ROOT="$HOME/.pyenv" && eval "$(pyenv init -)"
 
-echo "$HOME/.pyenv"
-echo "$_REMOTE_USER_HOME/.pyenv"
-
 # Definition specific tests
 check "pyenv version" pyenv --version
 check "not install python" test -e "$(which python)"

@@ -18,8 +18,9 @@ if [ "$WITH" != "none" ]; then
     else
         GLOBAL=$WITH
     fi
-    "${PYENV_ROOT:-$_REMOTE_USER_HOME/.pyenv}/bin/pyenv" install "$WITH"
-    "${PYENV_ROOT:-$_REMOTE_USER_HOME/.pyenv}/bin/pyenv" global "$GLOBAL"
+    export PYENV_ROOT="$_REMOTE_USER_HOME/.pyenv" && eval "$(pyenv init -)"
+    pyenv install "$WITH"
+    pyenv global "$GLOBAL"
 fi
 
 cat <<'EOF' >>"${_REMOTE_USER_HOME}/.zshrc"
