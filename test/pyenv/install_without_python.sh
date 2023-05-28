@@ -6,7 +6,7 @@ source dev-container-features-test-lib
 export PYENV_ROOT="$HOME/.pyenv" && eval "$(pyenv init -)"
 
 not_exist() {
-    if type "$0" >/dev/null ; then
+    if type "$1" >/dev/null ; then
         return 1
     else
         return 0

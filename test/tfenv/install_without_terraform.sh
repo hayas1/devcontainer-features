@@ -5,7 +5,7 @@ set -e
 source dev-container-features-test-lib
 
 not_installed() {
-    if "$0" --help >/dev/null ; then
+    if "$1" --help >/dev/null ; then
         return 1
     else
         return 0
