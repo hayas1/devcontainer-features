@@ -7,22 +7,22 @@
     "options": {
         "with-starship-config": {
             "type": "boolean",
-            "default": "false",
+            "default": false,
             "description": "if false, use default config or mount ~/.config/starship.yaml"
         },
         "with-sheldon-config": {
             "type": "boolean",
-            "default": "false",
+            "default": false,
             "description": "if false, use default config or mount ~/.config/sheldon/plugins.yaml"
         },
         "with-some-tools": {
             "type": "boolean",
-            "default": "false",
+            "default": false,
             "description": "if false, do not install zsh, git, sudo, exa, ripgrep and so on"
         },
         "write-zshrc": {
             "type": "boolean",
-            "default": "false",
+            "default": false,
             "description": "if false, do not write ~/.zshrc"
         }
     },
