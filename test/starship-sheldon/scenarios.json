@@ -1,8 +1,10 @@
 {
-    "install_only": {
+    "install_minimal": {
         "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
         "features": {
-            "starship-sheldon": {}
+            "starship-sheldon": {
+                "with-some-tools": true,
+            }
         }
     },
     "install_all": {
