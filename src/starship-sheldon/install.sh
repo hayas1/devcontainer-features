@@ -4,9 +4,13 @@ WITH_SHELDON_CONFIG=${WITH_SHELDON_CONFIG:-"false"}
 WITH_SOME_TOOLS=${WITH_SOME_TOOLS:-"false"}
 WITH_ZSHRC=${WITH_ZSHRC:-"false"}
 
+# dependencies
+apt-get update -y && apt-get install -y curl &&
+    apt-get clean && rm -rf /var/lib/apt/lists
+
 if [ "$WITH_SOME_TOOLS" = "true" ]; then
     apt-get update -y && apt-get upgrade -y &&
-        apt-get install -y zsh curl wget git procps htop connect-proxy sudo \
+        apt-get install -y zsh wget git procps htop connect-proxy sudo \
             exa ripgrep fd-find bat hexyl &&
         apt-get clean && rm -rf /var/lib/apt/lists
 fi
