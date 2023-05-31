@@ -14,6 +14,7 @@ fi
 # https://starship.rs/#quick-install
 curl -fsL https://starship.rs/install.sh | sh -s -- -y
 if [ "$WITH_STARSHIP_CONFIG" = "true" ]; then
+    mkdir -p "${_REMOTE_USER_HOME}/.config/"
     cp ./starship.toml "${_REMOTE_USER_HOME}/.config/starship.toml"
 fi
 
@@ -21,6 +22,7 @@ fi
 curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh |
     bash -s -- --repo rossmacarthur/sheldon --to /usr/local/bin
 if [ "$WITH_STARSHIP_CONFIG" = "true" ]; then
+    mkdir -p "${_REMOTE_USER_HOME}/.config/sheldon/"
     cp ./sheldon.toml "${_REMOTE_USER_HOME}/.config/sheldon/plugins.toml"
 fi
 
