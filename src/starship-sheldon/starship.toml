@@ -1,0 +1,174 @@
+format = """
+[░▒▓](#A3AED2)\
+$os$username\
+[](fg:#A3AED2 bg:#4672D0)\
+$directory\
+[](fg:#4672D0 bg:#394260)\
+$git_branch$git_status\
+[](fg:#394260 bg:#33658A)\
+$time\
+[](fg:#33658A bg:#121178)\
+$cmd_duration\
+[](fg:#121178)\
+
+$status\
+$gcloud$docker_context$kubernetes\
+$c$elixir$elm$golang$haskell$java$julia$nodejs$nim$python$rust$scala\
+$helm$terraform\
+
+$line_break$character
+"""
+command_timeout = 3000
+
+# You can also replace your username with a neat symbol like   or disable this
+# and use the os module below
+[username]
+show_always = true
+style_user = "bg:#A3AED2"
+style_root = "bg:#A3AED2"
+format = '[$user ]($style)'
+disabled = true
+
+[os]
+style = "bg:#A3AED2"
+disabled = false
+
+[directory]
+style = "bg:#4672D0"
+read_only_style = "bg:#4672D0"
+read_only = ""
+format = "[  $path]($style)[ $read_only ]($read_only_style)"
+truncation_length = 0
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"dotfiles" = ""
+
+[git_branch]
+symbol = ""
+style = "bg:#394260"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:#394260"
+conflicted = ":$count "
+ahead = ":$count "
+behind = ":$count "
+diverged = " "
+untracked = ":$count "
+stashed = ":$count "
+modified = ":$count "
+staged = ":$count "
+renamed = ":$count "
+deleted = ":$count "
+format = '[$all_status$ahead_behind]($style)'
+
+[time]
+disabled = false
+time_format = "%H:%M"
+style = "bg:#33658A"
+format = '[  $time]($style)'
+
+[cmd_duration]
+style = "bg:#121178"
+format = '[  $duration]($style)'
+
+[status]
+disabled = false
+map_symbol = true
+style = "bg:#EEECCC bold red"
+format = '[ ](#EEECCC)[$symbol $status]($style)[](#EEECCC)'
+
+
+[c]
+symbol = ""
+style = "bg:#669AD3"
+format = '[ ](#669AD3)[$symbol ($version)]($style)[](#669AD3)'
+
+[elixir]
+symbol = ""
+style = "bg:#4E2A8E"
+format = '[ ](#4E2A8E)[$symbol ($version)]($style)[](#4E2A8E)'
+
+[elm]
+symbol = ""
+style = "bg:#7DF13B"
+format = '[ ](#7DF13B)[$symbol ($version)]($style)[](#7DF13B)'
+
+[golang]
+symbol = ""
+style = "bg:#6AD7E5"
+format = '[ ](#6AD7E5)[$symbol ($version)]($style)[](#6AD7E5)'
+
+[haskell]
+symbol = ""
+style = "bg:#666666"
+format = '[ ](#666666)[$symbol ($version)]($style)[](#666666)'
+
+[java]
+symbol = ""
+style = "bg:#497495"
+format = '[ ](#497495)[$symbol ($version)]($style)[](#497495)'
+
+[julia]
+symbol = ""
+style = "bg:#9259A3"
+format = '[ ](#9259A3)[$symbol ($version)]($style)[](#9259A3)'
+
+[nodejs]
+symbol = ""
+style = "bg:#6BBF47"
+format = '[ ](#6BBF47)[$symbol ($version)]($style)[](#6BBF47)'
+
+[nim]
+symbol = ""
+style = "bg:#F3D400"
+format = '[ ](#F3D400)[$symbol ($version)]($style)[](#F3D400)'
+
+[python]
+symbol = ""
+style = "bg:#377AB1"
+format = '[ ](#377AB1)[$symbol ($version)]($style)[](#377AB1)'
+pyenv_version_name = true
+
+[rust]
+symbol = ""
+style = "bg:#F68800"
+format = '[ ](#F68800)[$symbol ($version)]($style)[](#F68800)'
+
+[scala]
+symbol = ""
+style = "bg:#DE3423"
+format = '[ ](#DE3423)[$symbol ($version)]($style)[](#DE3423)'
+
+
+[helm]
+symbol = "⎈"
+style = "bg:#091C84"
+format = '[ ](#091C84)[$symbol ($version)]($style)[](#091C84)'
+
+[terraform]
+# TODO symbol "󰛡" \udb81\udee1 or "󱁢" \udb84\udc62
+symbol = "ﯟ"
+style = "bg:#844FBA"
+format = '[ ](#844FBA)[$symbol ($version\[$workspace\])]($style)[](#844FBA)'
+
+
+[docker_context]
+disabled = false
+symbol = ""
+style = "bg:#06969A"
+format = '[ ](#06969A)[$symbol $context $path]($style)[](#06969A)'
+
+[kubernetes]
+disabled = false
+symbol = "☸"
+style = "bg:#83A1F3"
+format = '[ ](#83A1F3)[$symbol $context(\[$namespace\])]($style)[](#83A1F3)'
+[kubernetes.context_aliases]
+'gke_.*_(?P<var_cluster>[\w-]+)' = '$var_cluster'
+
+[gcloud]
+symbol = "🇬️"
+style = "bg:#3565F4"
+format = '[ ](#3565F4)[$symbol ($project)]($style)[](#3565F4)'
