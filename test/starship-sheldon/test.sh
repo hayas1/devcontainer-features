@@ -2,8 +2,7 @@
 set -e
 
 # Optional: Import test library
-source dev-container-features-test-
-sudo apt-get install -y zsh
+source dev-container-features-test-lib
 
 # Definition specific tests
 check "check for starship" starship --version
