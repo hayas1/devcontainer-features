@@ -2,6 +2,12 @@
     "all": {
         "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
         "features": {
+            "starship-sheldon": {
+                "with-starship-config": true,
+                "with-sheldon-config": true,
+                "with-some-tools": true,
+                "write-zshrc": true
+            },
             "tfenv": {},
             "pyenv": {}
         }
