@@ -19,6 +19,11 @@
             "type": "boolean",
             "default": "false",
             "description": "if false, do not install zsh, git, sudo, exa, ripgrep and so on"
+        },
+        "write-zshrc": {
+            "type": "boolean",
+            "default": "false",
+            "description": "if false, do not write ~/.zshrc"
         }
     },
     "installsAfter": [

@@ -2,6 +2,7 @@
 WITH_STARSHIP_CONFIG=${WITH_STARSHIP_CONFIG:-"false"}
 WITH_SHELDON_CONFIG=${WITH_SHELDON_CONFIG:-"false"}
 WITH_SOME_TOOLS=${WITH_SOME_TOOLS:-"false"}
+WITH_ZSHRC=${WITH_ZSHRC:-"false"}
 
 if [ "$WITH_SOME_TOOLS" = "true" ]; then
     apt-get update -y && apt-get upgrade -y &&
@@ -28,7 +29,10 @@ apt-get update -y && apt-get upgrade -y && apt-get install -y locales &&
     apt-get clean && rm -rf /var/lib/apt/lists
 localedef -f UTF-8 -i en_US en_US.UTF-8
 
-cat <<'EOF' >>"${HOME}/.zshrc"
+if [ "$WITH_ZSHRC" = "true" ]; then
+    cat ./zshrc >>"${_REMOTE_USER_HOME}/.zshrc"
+fi
+cat <<'EOF' >>"${_REMOTE_USER_HOME}/.zshrc"
 ### load sheldon
 eval "$(sheldon source)"
 ### load starship
