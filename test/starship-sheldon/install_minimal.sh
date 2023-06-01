@@ -9,8 +9,6 @@ not() {
     ! "$@"
 }
 
-ls $tmp
-
 # Definition specific tests
 check "check for starship" starship --version
 check "check for sheldon" sheldon --version
