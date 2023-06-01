@@ -4,6 +4,7 @@ set -e
 # Optional: Import test library
 source dev-container-features-test-lib
 
+tmp=/tmp/devcontainer-feature-starship-sheldon/test
 command_not_exist() {
     if type "$1" >/dev/null; then
         return 1
