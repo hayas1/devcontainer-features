@@ -15,10 +15,10 @@ Install starship and sheldon
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| with-starship-config | if false, use default config or mount ~/.config/starship.yaml | boolean | false |
-| with-sheldon-config | if false, use default config or mount ~/.config/sheldon/plugins.yaml | boolean | false |
+| with-starship-config | if false, use default config or mount `~/.config/starship.yaml` | boolean | false |
+| with-sheldon-config | if false, use default config or mount `~/.config/sheldon/plugins.yaml` | boolean | false |
 | with-some-tools | if false, do not install zsh, git, sudo, exa, ripgrep and so on | boolean | false |
-| write-zshrc | if false, do not write ~/.zshrc | boolean | false |
+| write-zshrc | if false, do not write `~/.zshrc` | boolean | false |
 
 
 
