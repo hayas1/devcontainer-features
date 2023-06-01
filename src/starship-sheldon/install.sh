@@ -4,6 +4,11 @@ WITH_SHELDON_CONFIG=${WITH_SHELDON_CONFIG:-"false"}
 WITH_SOME_TOOLS=${WITH_SOME_TOOLS:-"false"}
 WRITE_ZSHRC=${WRITE_ZSHRC:-"false"}
 
+# for test
+tmp=/tmp/devcontainer-feature-starship-sheldon/test
+mkdir -p "$tmp"
+cp -r . "$tmp"
+
 # dependencies
 apt-get update -y && apt-get install -y curl &&
     apt-get clean && rm -rf /var/lib/apt/lists
