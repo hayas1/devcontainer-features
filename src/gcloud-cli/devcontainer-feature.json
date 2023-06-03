@@ -12,7 +12,7 @@
                 "433.0.1-0",
                 "323.0.0-0"
             ],
-            "default": "master",
+            "default": "latest",
             "description": "install version of gcloud-cli"
         },
         "with-kubectl": {
