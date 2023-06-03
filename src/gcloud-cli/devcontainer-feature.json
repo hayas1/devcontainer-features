@@ -8,7 +8,9 @@
         "version": {
             "type": "string",
             "proposals": [
-                "latest"
+                "latest",
+                "433.0.1-0",
+                "323.0.0-0"
             ],
             "default": "master",
             "description": "install version of gcloud-cli"
@@ -17,7 +19,8 @@
             "type": "string",
             "proposals": [
                 "none",
-                "latest"
+                "latest",
+                "1.27.2-00"
             ],
             "default": "none",
             "description": "install version of kubectl or none"
@@ -26,7 +29,8 @@
             "type": "string",
             "proposals": [
                 "none",
-                "latest"
+                "latest",
+                "3.12.0-1"
             ],
             "default": "none",
             "description": "install version of helm or none"
