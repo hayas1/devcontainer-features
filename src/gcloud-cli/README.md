@@ -15,7 +15,7 @@ Install gcloud-cli
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| version | install version of gcloud-cli | string | master |
+| version | install version of gcloud-cli | string | latest |
 | with-kubectl | install version of kubectl or none | string | none |
 | with-helm | install version of helm or none | string | none |
 
