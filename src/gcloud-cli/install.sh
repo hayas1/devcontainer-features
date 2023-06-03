@@ -5,8 +5,7 @@ WITH_HELM=${WITH_HELM:-"none"}
 
 # for test
 tmp=/tmp/devcontainer-feature-gcloud-cli/test
-mkdir -p "$tmp"
-cp -r . "$tmp"
+mkdir -p "$tmp" && cp -r . "$tmp"
 
 # install required tools
 apt-get update -y && apt-get install -y curl gnupg &&
