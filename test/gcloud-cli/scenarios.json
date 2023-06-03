@@ -7,5 +7,15 @@
                 "with-helm": "latest"
             }
         }
+    },
+    "install_with_version": {
+        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "features": {
+            "gcloud-cli": {
+                "version": "433.0.1-0",
+                "with-kubectl": "1.27.2-00",
+                "with-helm": "3.12.0-1"
+            }
+        }
     }
 }
