@@ -4,7 +4,7 @@ WITH_KUBECTL=${WITH_KUBECTL:-"none"}
 WITH_HELM=${WITH_HELM:-"none"}
 
 # for test
-tmp=/tmp/devcontainer-feature-starship-sheldon/test
+tmp=/tmp/devcontainer-feature-gcloud-cli/test
 mkdir -p "$tmp"
 cp -r . "$tmp"
 
