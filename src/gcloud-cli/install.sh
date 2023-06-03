@@ -4,7 +4,7 @@ WITH_KUBECTL=${WITH_KUBECTL:-"none"}
 WITH_HELM=${WITH_HELM:-"none"}
 
 # install required tools
-apt-get update -y && apt-get install -y gnupg &&
+apt-get update -y && apt-get install -y curl gnupg &&
     apt-get clean && rm -rf /var/lib/apt/lists
 
 # install gcloud and kubectl https://cloud.google.com/sdk/docs/install?hl=ja#deb
