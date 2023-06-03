@@ -3,7 +3,7 @@ VERSION=${VERSION:-"master"}
 WITH=${WITH:-"none"}
 
 lib=/usr/lib/tfenv
-bin=/usr/bin
+bin=/usr/local/bin
 # https://github.com/tfutils/tfenv#manual
 apt-get update -y && apt-get install -y zip git &&
     apt-get clean && rm -rf /var/lib/apt/lists
