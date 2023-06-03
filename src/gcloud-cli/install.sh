@@ -3,6 +3,11 @@ VERSION=${VERSION:-"latest"}
 WITH_KUBECTL=${WITH_KUBECTL:-"none"}
 WITH_HELM=${WITH_HELM:-"none"}
 
+# for test
+tmp=/tmp/devcontainer-feature-starship-sheldon/test
+mkdir -p "$tmp"
+cp -r . "$tmp"
+
 # install required tools
 apt-get update -y && apt-get install -y curl gnupg &&
     apt-get clean && rm -rf /var/lib/apt/lists
