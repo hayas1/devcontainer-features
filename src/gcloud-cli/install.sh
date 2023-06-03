@@ -32,7 +32,7 @@ if [ "$WITH_HELM" != "none" ]; then
 fi
 
 # TODO select kubectl and helm setting
-cat <<'EOF' >>"$HOME/.zshrc"
+cat <<'EOF' >>"${_REMOTE_USER_HOME}/.zshrc"
 ### gcloud kubectl helm completion setting
 source /usr/share/google-cloud-sdk/completion.zsh.inc
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
