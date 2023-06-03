@@ -19,12 +19,12 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg |
     apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 # TODO specified version
 apt-get update -y && apt-get install -y google-cloud-sdk
-cat ./zshrc-gcloud >>"${_REMOTE_USER_HOME}/.zshrc"
+cat ./gcloud.zshrc >>"${_REMOTE_USER_HOME}/.zshrc"
 
 if [ "$WITH_KUBECTL" != "none" ]; then
     # TODO specified version
     apt-get install -y kubectl
-    cat ./zshrc-kubectl >>"${_REMOTE_USER_HOME}/.zshrc"
+    cat ./kubectl.zshrc >>"${_REMOTE_USER_HOME}/.zshrc"
 fi
 
 if [ "$WITH_HELM" != "none" ]; then
@@ -36,5 +36,5 @@ if [ "$WITH_HELM" != "none" ]; then
         tee /etc/apt/sources.list.d/helm-stable-debian.list
     # TODO specified version
     apt-get update -y && apt-get -y install helm
-    cat ./zshrc-helm >>"${_REMOTE_USER_HOME}/.zshrc"
+    cat ./helm.zshrc >>"${_REMOTE_USER_HOME}/.zshrc"
 fi
