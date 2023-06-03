@@ -13,6 +13,7 @@ jobs:
     strategy:
       matrix:
         features:
+          - starship-sheldon
           - tfenv
           - pyenv
         baseImage:
@@ -33,6 +34,7 @@ jobs:
     strategy:
       matrix:
         features:
+          - starship-sheldon
           - tfenv
           - pyenv
     steps:
