@@ -3,7 +3,7 @@ VERSION=${VERSION:-"master"}
 WITH=${WITH:-"none"}
 
 lib="${_REMOTE_USER_HOME}/.pyenv"
-bin=/usr/bin
+bin=/usr/local/bin
 ### https://github.com/pyenv/pyenv#basic-github-checkout
 apt-get update -y && apt-get install -y git &&
     apt-get clean && rm -rf /var/lib/apt/lists
