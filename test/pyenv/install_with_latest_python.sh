@@ -5,6 +5,9 @@ set -e
 source dev-container-features-test-lib
 tmp=/tmp/devcontainer-feature-pyenv/test
 export PYENV_ROOT="$HOME/.pyenv" && eval "$(pyenv init -)"
+not() {
+    ! "$@"
+}
 
 # Definition specific tests
 check "pyenv version" pyenv --version
