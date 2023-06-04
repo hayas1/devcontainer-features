@@ -11,7 +11,7 @@ mkdir -p "$tmp" && cp -r . "$tmp"
 apt-get update -y && apt-get install -y curl gnupg &&
     apt-get clean && rm -rf /var/lib/apt/lists
 
-# install gcloud and kubectl https://cloud.google.com/sdk/docs/install?hl=ja#deb
+# install gcloud https://cloud.google.com/sdk/docs/install?hl=ja#deb
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" |
     tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg |
@@ -23,6 +23,7 @@ else
 fi
 cat ./gcloud.zshrc >>"${_REMOTE_USER_HOME}/.zshrc"
 
+# install kubectl https://cloud.google.com/sdk/docs/install?hl=ja#deb-additional
 if [ "$WITH_KUBECTL" != "none" ]; then
     if [ "$WITH_KUBECTL" = "latest" ]; then
         apt-get install -y kubectl
@@ -32,8 +33,8 @@ if [ "$WITH_KUBECTL" != "none" ]; then
     cat ./kubectl.zshrc >>"${_REMOTE_USER_HOME}/.zshrc"
 fi
 
+# install helm https://helm.sh/docs/intro/install/#from-apt-debianubuntu
 if [ "$WITH_HELM" != "none" ]; then
-    # install helm https://helm.sh/docs/intro/install/#from-apt-debianubuntu
     curl https://baltocdn.com/helm/signing.asc |
         gpg --dearmor | tee /usr/share/keyrings/helm.gpg >/dev/null
     apt-get install apt-transport-https --yes
