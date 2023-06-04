@@ -1,0 +1,21 @@
+{
+    "id": "starship",
+    "version": "0.0.1",
+    "name": "starship",
+    "documentationURL": "https://github.com/hayas1/devcontainer-features/tree/main/src/starship",
+    "description": "Install starship",
+    "options": {
+        "rc-file": {
+            "type": "string",
+            "proposals": [
+                ".zshrc",
+                ".bashrc"
+            ],
+            "default": ".zshrc",
+            "description": "setting for selected shell"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
