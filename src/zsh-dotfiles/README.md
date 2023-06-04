@@ -20,6 +20,25 @@ Setup zsh-dotfiles
 | with-some-tools | if false, do not install zsh, git, sudo, exa, ripgrep and so on | boolean | true |
 | overwrite-zshrc | if false, do not overwrite `~/.zshrc` (append only) | boolean | true |
 
+## Customizations
+
+### VS Code Extensions
+
+- `eamodio.gitlens`
+- `streetsidesoftware.code-spell-checker`
+- `shardulm94.trailing-spaces`
+- `Gruntfuggly.todo-tree`
+- `christian-kohler.path-intellisense`
+- `mads-hartmann.bash-ide-vscode`
+- `timonwong.shellcheck`
+- `foxundermoon.shell-format`
+- `yzhang.markdown-all-in-one`
+- `rangav.vscode-thunder-client`
+- `naumovs.color-highlight`
+- `GitHub.vscode-github-actions`
+- `GitHub.vscode-pull-request-github`
+- `GitHub.copilot`
+
 
 
 ---
