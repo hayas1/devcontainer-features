@@ -13,6 +13,7 @@ jobs:
     strategy:
       matrix:
         features:
+          - zsh-dotfiles
           - starship
           - sheldon
           - gcloud-cli
@@ -36,6 +37,7 @@ jobs:
     strategy:
       matrix:
         features:
+          - zsh-dotfiles
           - starship
           - sheldon
           - gcloud-cli
