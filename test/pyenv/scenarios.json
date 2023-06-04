@@ -25,5 +25,13 @@
                 "with": "none"
             }
         }
+    },
+    "install_with_bashrc": {
+        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "features": {
+            "pyenv": {
+                "rc-file": ".bashrc"
+            }
+        }
     }
 }

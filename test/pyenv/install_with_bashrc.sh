@@ -11,9 +11,7 @@ not() {
 
 # Definition specific tests
 check "pyenv version" pyenv --version
-check "python version" python --version
-check "pip version" pip --version
-check "check for zshrc" diff "${HOME}/.zshrc" "${tmp}/rc" | cut -c 1 | not grep '>'
+check "check for bashrc" diff "${HOME}/.bashrc" "${tmp}/rc" | cut -c 1 | not grep '>'
 
 # Report result
 reportResults
