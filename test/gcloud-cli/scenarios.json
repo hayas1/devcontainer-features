@@ -1,0 +1,37 @@
+{
+    "install_only_gcloud": {
+        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "features": {
+            "gcloud-cli": {}
+        }
+    },
+    "install_kubectl_helm": {
+        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "features": {
+            "gcloud-cli": {
+                "with-kubectl": "latest",
+                "with-helm": "latest"
+            }
+        }
+    },
+    "install_with_version": {
+        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "features": {
+            "gcloud-cli": {
+                "version": "433.0.1-0",
+                "with-kubectl": "1.27.2-00",
+                "with-helm": "3.12.0-1"
+            }
+        }
+    },
+    "install_with_bash_completion": {
+        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "features": {
+            "gcloud-cli": {
+                "with-kubectl": "latest",
+                "with-helm": "latest",
+                "completion": "bash"
+            }
+        }
+    }
+}

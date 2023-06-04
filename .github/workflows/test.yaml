@@ -14,6 +14,7 @@ jobs:
       matrix:
         features:
           - starship-sheldon
+          - gcloud-cli
           - tfenv
           - pyenv
         baseImage:
@@ -35,6 +36,7 @@ jobs:
       matrix:
         features:
           - starship-sheldon
+          - gcloud-cli
           - tfenv
           - pyenv
     steps:
