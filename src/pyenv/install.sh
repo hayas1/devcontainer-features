@@ -13,7 +13,8 @@ bin=/usr/local/bin
 apt-get update -y && apt-get install -y git &&
     apt-get clean && rm -rf /var/lib/apt/lists
 git clone https://github.com/pyenv/pyenv.git "$lib" --branch "${VERSION}" --depth 1
-pushd "$lib" && src/configure && make -C src && popd
+pushd "$lib" && src/configure && make -C src
+popd
 ln -s "$lib/bin/pyenv" "$bin/pyenv"
 
 if [ "$WITH" != "none" ]; then
@@ -28,7 +29,5 @@ if [ "$WITH" != "none" ]; then
     pyenv global "$GLOBAL"
 fi
 
-pwd
-ls
 printf '\n' >>"${_REMOTE_USER_HOME}/${RC_FILE}"
 cat "./rc" >>"${_REMOTE_USER_HOME}/${RC_FILE}"
