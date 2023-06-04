@@ -13,7 +13,8 @@ jobs:
     strategy:
       matrix:
         features:
-          - starship-sheldon
+          - starship
+          - sheldon
           - gcloud-cli
           - tfenv
           - pyenv
@@ -35,7 +36,8 @@ jobs:
     strategy:
       matrix:
         features:
-          - starship-sheldon
+          - starship
+          - sheldon
           - gcloud-cli
           - tfenv
           - pyenv
