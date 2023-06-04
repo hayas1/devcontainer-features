@@ -26,6 +26,36 @@
             "description": "if false, do not overwrite `~/.zshrc` (append only)"
         }
     },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "editor.rulers": [
+                    80,
+                    120
+                ],
+                "editor.formatOnSave": true,
+                "editor.stickyScroll.enabled": true,
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "trailing-spaces.trimOnSave": true
+            },
+            "extensions": [
+                "eamodio.gitlens",
+                "streetsidesoftware.code-spell-checker",
+                "shardulm94.trailing-spaces",
+                "Gruntfuggly.todo-tree",
+                "christian-kohler.path-intellisense",
+                "mads-hartmann.bash-ide-vscode",
+                "timonwong.shellcheck",
+                "foxundermoon.shell-format",
+                "yzhang.markdown-all-in-one",
+                "rangav.vscode-thunder-client",
+                "naumovs.color-highlight",
+                "GitHub.vscode-github-actions",
+                "GitHub.vscode-pull-request-github",
+                "GitHub.copilot"
+            ]
+        }
+    },
     "installsAfter": [
         "ghcr.io/devcontainers/features/common-utils"
     ]
