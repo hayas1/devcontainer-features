@@ -2,6 +2,8 @@
     "all": {
         "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
         "features": {
+            "starship": {},
+            "sheldon": {},
             "gcloud-cli": {},
             "tfenv": {},
             "pyenv": {}
