@@ -3,6 +3,10 @@
         "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
         "features": {
             "zsh-dotfiles": {
+                "with-starship-config": false,
+                "with-sheldon-config": false,
+                "with-some-tools": false,
+                "overwrite-zshrc": false,
                 "write-zshrc": false
             }
         }
