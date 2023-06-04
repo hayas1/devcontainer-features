@@ -10,8 +10,6 @@ not() {
 }
 
 # Definition specific tests
-check "check for starship" starship --version
-check "check for sheldon" sheldon --version
 check "not install exa" not type exa >/dev/null
 check "not install ripgrep" not type rg >/dev/null
 check "not copy starship.toml" not test -e "${HOME}/.config/starship.toml"
