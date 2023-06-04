@@ -27,6 +27,15 @@
             ],
             "default": "none",
             "description": "with python"
+        },
+        "rc-file": {
+            "type": "string",
+            "proposals": [
+                ".zshrc",
+                ".bashrc"
+            ],
+            "default": ".zshrc",
+            "description": "setting for selected shell"
         }
     },
     "customizations": {

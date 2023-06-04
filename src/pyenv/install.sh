@@ -1,6 +1,7 @@
 #! /bin/bash -e
 VERSION=${VERSION:-"master"}
 WITH=${WITH:-"none"}
+RC_FILE=${RC_FILE:-".zshrc"}
 
 lib="${_REMOTE_USER_HOME}/.pyenv"
 bin=/usr/local/bin
@@ -18,15 +19,10 @@ if [ "$WITH" != "none" ]; then
     else
         GLOBAL=$WITH
     fi
-    export PYENV_ROOT="$_REMOTE_USER_HOME/.pyenv" && eval "$(pyenv init -)"
+    export PYENV_ROOT="${_REMOTE_USER_HOME}/.pyenv" && eval "$(pyenv init -)"
     pyenv install "$WITH"
     pyenv global "$GLOBAL"
 fi
 
-cat <<'EOF' >>"${_REMOTE_USER_HOME}/.zshrc"
-### pyenv settings
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-EOF
+printf '\n' >>"${_REMOTE_USER_HOME}/.${COMPLETION}rc"
+cat "./rc" >>"${_REMOTE_USER_HOME}/${RC_FILE}"
