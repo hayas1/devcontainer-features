@@ -2,6 +2,7 @@
     "all": {
         "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
         "features": {
+            "zsh-dotfiles": {},
             "starship": {},
             "sheldon": {},
             "gcloud-cli": {},
