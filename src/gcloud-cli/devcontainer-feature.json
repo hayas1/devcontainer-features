@@ -45,6 +45,13 @@
             "description": "completion setting for selected shell"
         }
     },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                // "GoogleCloudTools.cloudcode",
+            ]
+        }
+    },
     "installsAfter": [
         "ghcr.io/devcontainers/features/common-utils",
         "ghcr.io/hayas1/devcontainer-features/starship-sheldon"
