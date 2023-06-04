@@ -34,6 +34,15 @@
             ],
             "default": "none",
             "description": "install version of helm or none"
+        },
+        "completion": {
+            "type": "string",
+            "proposals": [
+                "zsh",
+                "bash"
+            ],
+            "default": "zsh",
+            "description": "completion setting for selected shell"
         }
     },
     "installsAfter": [

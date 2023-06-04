@@ -2,6 +2,7 @@
 VERSION=${VERSION:-"latest"}
 WITH_KUBECTL=${WITH_KUBECTL:-"none"}
 WITH_HELM=${WITH_HELM:-"none"}
+COMPLETION=${COMPLETION:-"zsh"}
 
 # for test
 tmp=/tmp/devcontainer-feature-gcloud-cli/test
@@ -10,6 +11,9 @@ mkdir -p "$tmp" && cp -r . "$tmp"
 # install required tools
 apt-get update -y && apt-get install -y curl gnupg &&
     apt-get clean && rm -rf /var/lib/apt/lists
+if [ "$COMPLETION" = "bash" ]; then
+    apt-get install -y bash-completion
+fi
 
 # install gcloud https://cloud.google.com/sdk/docs/install?hl=ja#deb
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" |
@@ -21,7 +25,7 @@ if [ "$VERSION" = "latest" ]; then
 else
     apt-get update -y && apt-get install -y google-cloud-sdk="${VERSION}"
 fi
-cat ./gcloud.zshrc >>"${_REMOTE_USER_HOME}/.zshrc"
+cat "./${COMPLETION}rc/gcloud.${COMPLETION}rc" >>"${_REMOTE_USER_HOME}/.${COMPLETION}rc"
 
 # install kubectl https://cloud.google.com/sdk/docs/install?hl=ja#deb-additional
 if [ "$WITH_KUBECTL" != "none" ]; then
@@ -30,7 +34,7 @@ if [ "$WITH_KUBECTL" != "none" ]; then
     else
         apt-get install -y kubectl="${WITH_KUBECTL}"
     fi
-    cat ./kubectl.zshrc >>"${_REMOTE_USER_HOME}/.zshrc"
+    cat "./${COMPLETION}rc/kubectl.${COMPLETION}rc" >>"${_REMOTE_USER_HOME}/.${COMPLETION}rc"
 fi
 
 # install helm https://helm.sh/docs/intro/install/#from-apt-debianubuntu
@@ -45,5 +49,5 @@ if [ "$WITH_HELM" != "none" ]; then
     else
         apt-get update -y && apt-get -y install helm="${WITH_HELM}"
     fi
-    cat ./helm.zshrc >>"${_REMOTE_USER_HOME}/.zshrc"
+    cat "./${COMPLETION}rc/helm.${COMPLETION}rc" >>"${_REMOTE_USER_HOME}/.${COMPLETION}rc"
 fi
