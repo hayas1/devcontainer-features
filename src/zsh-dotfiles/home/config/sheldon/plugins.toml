@@ -1,0 +1,67 @@
+# `sheldon` configuration file
+# ----------------------------
+#
+# You can modify this file directly or you can use one of the following
+# `sheldon` commands which are provided to assist in editing the config file:
+#
+# - `sheldon add` to add a new plugin to the config file
+# - `sheldon edit` to open up the config file in the default editor
+# - `sheldon remove` to remove a plugin from the config file
+#
+# See the documentation for more https://github.com/rossmacarthur/sheldon#readme
+
+shell = "zsh"
+
+[plugins]
+
+# https://sheldon.cli.rs/Examples.html#deferred-loading-of-plugins-in-zsh
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+[templates]
+defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
+
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+apply = ["defer"]
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+apply = ["defer"]
+[plugins.zsh-autosuggest-strategy]
+inline = "export ZSH_AUTOSUGGEST_STRATEGY=(history completion)"
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+apply = ["defer"]
+
+# conflict with zsh-syntax-highliting ?
+# [plugins.zsh-history-substring-search]
+# github = "zsh-users/zsh-history-substring-search"
+# apply = ["defer"]
+
+[plugins.zsh-history-search-multi-word]
+github = "z-shell/H-S-MW"
+apply = ["defer"]
+
+
+# aliases
+[plugins.alias-exa-ls]
+inline = """
+if type exa >/dev/null 2>&1; then
+    alias ls='exa --git --icons'
+    alias la='exa -a --icons'
+    alias ll='exa -aal --icons'
+    alias lt='exa -T -L 3 -a -I "node_modules|.git|.cache" --icons'
+    alias ltl='exa -T -L 3 -a -I "node_modules|.git|.cache" -l --icons'
+fi
+"""
+[plugins.alias-ripgrep-grep]
+inline = "$(type rg >/dev/null 2>&1) && alias grep=rg"
+[plugins.alias-htop-ps]
+inline = "$(type htop >/dev/null 2>&1) && alias psp=htop"
+[plugins.alias-bat-cat]
+inline = "$(type batcat >/dev/null 2>&1) && alias cat='batcat --paging=never --style=header --theme=TwoDark' && alias less='batcat --theme=TwoDark'"
+[plugins.alias-hexyl-od]
+inline = "$(type hexyl >/dev/null 2>&1) && alias odp=hexyl"
+[plugins.alias-fd-find]
+inline = "$(type fdfind >/dev/null 2>&1) && alias fd=fdfind"

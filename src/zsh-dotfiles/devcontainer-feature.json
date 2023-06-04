@@ -1,0 +1,32 @@
+{
+    "id": "zsh-dotfiles",
+    "version": "0.0.1",
+    "name": "zsh-dotfiles",
+    "documentationURL": "https://github.com/hayas1/devcontainer-features/tree/main/src/zsh-dotfiles",
+    "description": "Setup zsh-dotfiles",
+    "options": {
+        "with-starship-config": {
+            "type": "boolean",
+            "default": true,
+            "description": "if false, do not use starship, or use default config or mount `~/.config/starship.yaml`"
+        },
+        "with-sheldon-config": {
+            "type": "boolean",
+            "default": true,
+            "description": "if false, do not use sheldon, or use default config or mount `~/.config/sheldon/plugins.yaml`"
+        },
+        "with-some-tools": {
+            "type": "boolean",
+            "default": true,
+            "description": "if false, do not install zsh, git, sudo, exa, ripgrep and so on"
+        },
+        "overwrite-zshrc": {
+            "type": "boolean",
+            "default": true,
+            "description": "if false, do not overwrite `~/.zshrc` (append only)"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
