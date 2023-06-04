@@ -30,5 +30,5 @@ fi
 
 # overwrite zshrc
 if [ "$OVERWRITE_ZSHRC" = "true" ]; then
-    cat ./zshrc >"${_REMOTE_USER_HOME}/.zshrc"
+    cat ./home/zshrc >"${_REMOTE_USER_HOME}/.zshrc"
 fi
