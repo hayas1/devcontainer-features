@@ -28,5 +28,7 @@ if [ "$WITH" != "none" ]; then
     pyenv global "$GLOBAL"
 fi
 
+pwd
+ls
 printf '\n' >>"${_REMOTE_USER_HOME}/${RC_FILE}"
 cat "./rc" >>"${_REMOTE_USER_HOME}/${RC_FILE}"
