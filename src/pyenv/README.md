@@ -17,6 +17,7 @@ Install pyenv
 |-----|-----|-----|-----|
 | version | install ref of pyenv github | string | master |
 | with | with python | string | none |
+| rc-file | setting for selected shell | string | .zshrc |
 
 ## Customizations
 
