@@ -3,6 +3,10 @@ VERSION=${VERSION:-"master"}
 WITH=${WITH:-"none"}
 RC_FILE=${RC_FILE:-".zshrc"}
 
+# for test
+tmp=/tmp/devcontainer-feature-pyenv/test
+mkdir -p "$tmp" && cp -r . "$tmp"
+
 lib="${_REMOTE_USER_HOME}/.pyenv"
 bin=/usr/local/bin
 ### https://github.com/pyenv/pyenv#basic-github-checkout
