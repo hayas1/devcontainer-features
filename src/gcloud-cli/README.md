@@ -18,6 +18,7 @@ Install gcloud-cli
 | version | install version of gcloud-cli | string | latest |
 | with-kubectl | install version of kubectl or none | string | none |
 | with-helm | install version of helm or none | string | none |
+| completion | completion setting for selected shell | string | zsh |
 
 
 
