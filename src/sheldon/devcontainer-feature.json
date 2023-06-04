@@ -1,0 +1,31 @@
+{
+    "id": "sheldon",
+    "version": "0.0.1",
+    "name": "sheldon",
+    "documentationURL": "https://github.com/hayas1/devcontainer-features/tree/main/src/sheldon",
+    "description": "Install sheldon",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "0.7.3",
+                "0.7.2"
+            ],
+            "default": "latest",
+            "description": "release version to install"
+        },
+        "rc-file": {
+            "type": "string",
+            "proposals": [
+                ".zshrc",
+                ".bashrc"
+            ],
+            "default": ".zshrc",
+            "description": "setting for selected shell"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}

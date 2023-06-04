@@ -1,0 +1,19 @@
+{
+    "install_with_zshrc": {
+        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "features": {
+            "sheldon": {
+                "rc-file": ".zshrc"
+            }
+        }
+    },
+    "install_with_bashrc_fixed": {
+        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "features": {
+            "sheldon": {
+                "version": "0.7.2",
+                "rc-file": ".bashrc"
+            }
+        }
+    }
+}
