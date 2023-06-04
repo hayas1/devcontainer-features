@@ -9,11 +9,12 @@ tmp=/tmp/devcontainer-feature-gcloud-cli/test
 mkdir -p "$tmp" && cp -r . "$tmp"
 
 # install required tools
-apt-get update -y && apt-get install -y curl gnupg &&
-    apt-get clean && rm -rf /var/lib/apt/lists
+apt-get update -y && apt-get install -y curl gnupg
 if [ "$COMPLETION" = "bash" ]; then
     apt-get install -y bash-completion
 fi
+apt-get clean && rm -rf /var/lib/apt/lists
+printf '\n' >>"${_REMOTE_USER_HOME}/.${COMPLETION}rc"
 
 # install gcloud https://cloud.google.com/sdk/docs/install?hl=ja#deb
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" |
