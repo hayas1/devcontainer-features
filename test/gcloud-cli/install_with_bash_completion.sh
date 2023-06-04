@@ -12,9 +12,9 @@ not() {
 check "check for gcloud" gcloud --version
 check "check for kubectl" kubectl version --client
 check "check for helm" helm version --client
-check "check for gcloud completion" diff "${HOME}/.zshrc" "${tmp}/zshrc/gcloud.zshrc" | cut -c 1 | not grep '>'
-check "check for kubectl completion" diff "${HOME}/.zshrc" "${tmp}/zshrc/kubectl.zshrc" | cut -c 1 | not grep '>'
-check "check for helm completion" diff "${HOME}/.zshrc" "${tmp}/zshrc/helm.zshrc" | cut -c 1 | not grep '>'
+check "check for gcloud completion" diff "${HOME}/.bashrc" "${tmp}/bashrc/gcloud.bashrc" | cut -c 1 | not grep '>'
+check "check for kubectl completion" diff "${HOME}/.bashrc" "${tmp}/bashrc/kubectl.bashrc" | cut -c 1 | not grep '>'
+check "check for helm completion" diff "${HOME}/.bashrc" "${tmp}/bashrc/helm.bashrc" | cut -c 1 | not grep '>'
 
 # Report result
 reportResults
