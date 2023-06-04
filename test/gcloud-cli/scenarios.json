@@ -1,4 +1,10 @@
 {
+    "install_only_gcloud": {
+        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "features": {
+            "gcloud-cli": {}
+        }
+    },
     "install_kubectl_helm": {
         "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
         "features": {
