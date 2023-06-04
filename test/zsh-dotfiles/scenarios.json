@@ -6,8 +6,7 @@
                 "with-starship-config": false,
                 "with-sheldon-config": false,
                 "with-some-tools": false,
-                "overwrite-zshrc": false,
-                "write-zshrc": false
+                "overwrite-zshrc": true
             }
         }
     },
