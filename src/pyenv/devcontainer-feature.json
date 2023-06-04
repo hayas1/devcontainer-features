@@ -1,6 +1,6 @@
 {
     "id": "pyenv",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "name": "pyenv",
     "documentationURL": "https://github.com/hayas1/devcontainer-features/tree/main/src/pyenv",
     "description": "Install pyenv",
