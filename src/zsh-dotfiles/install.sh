@@ -8,14 +8,6 @@ OVERWRITE_ZSHRC=${OVERWRITE_ZSHRC:-"true"}
 tmp=/tmp/devcontainer-feature-zsh-dotfiles/test
 mkdir -p "$tmp" && cp -r . "$tmp"
 
-# tools
-if [ "$WITH_SOME_TOOLS" = "true" ]; then
-    apt-get update -y && apt-get upgrade -y &&
-        apt-get install -y zsh wget git procps htop connect-proxy sudo \
-            exa ripgrep fd-find bat hexyl &&
-        apt-get clean && rm -rf /var/lib/apt/lists
-fi
-
 # starship
 if [ "$WITH_STARSHIP_CONFIG" = "true" ]; then
     mkdir -p "${_REMOTE_USER_HOME}/.config/"
@@ -26,6 +18,14 @@ fi
 if [ "$WITH_SHELDON_CONFIG" = "true" ]; then
     mkdir -p "${_REMOTE_USER_HOME}/.config/sheldon/"
     cp ./home/config/sheldon/plugins.toml "${_REMOTE_USER_HOME}/.config/sheldon/plugins.toml"
+fi
+
+# tools
+if [ "$WITH_SOME_TOOLS" = "true" ]; then
+    apt-get update -y && apt-get upgrade -y &&
+        apt-get install -y zsh wget git procps htop connect-proxy sudo \
+            exa ripgrep fd-find bat hexyl &&
+        apt-get clean && rm -rf /var/lib/apt/lists
 fi
 
 # overwrite zshrc
