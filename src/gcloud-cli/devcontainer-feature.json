@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "name": "gcloud-cli",
     "documentationURL": "https://github.com/hayas1/devcontainer-features/tree/main/src/gcloud-cli",
-    "description": "Install gcloud-cli",
+    "description": "Install gcloud-cli with kubectl and helm (optional)",
     "options": {
         "version": {
             "type": "string",
@@ -43,6 +43,11 @@
             ],
             "default": "zsh",
             "description": "completion setting for selected shell"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": []
         }
     },
     "installsAfter": [
