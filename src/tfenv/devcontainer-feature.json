@@ -37,6 +37,6 @@
     },
     "installsAfter": [
         "ghcr.io/devcontainers/features/common-utils",
-        "ghcr.io/hayas1/devcontainer-features/starship-sheldon"
+        "ghcr.io/hayas1/devcontainer-features/zsh-dotfiles"
     ]
 }

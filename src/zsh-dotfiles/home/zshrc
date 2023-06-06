@@ -19,5 +19,3 @@ export SAVEHIST=100000      # history size in storage
 setopt share_history        # share same time concurrent zsh history
 setopt hist_reduce_blanks   # save history without trailing spaces
 setopt hist_ignore_all_dups # save history without duplicate
-
-### specified settings ###

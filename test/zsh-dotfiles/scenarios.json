@@ -2,19 +2,22 @@
     "install_minimal": {
         "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
         "features": {
-            "starship-sheldon": {
-                "write-zshrc": true
+            "zsh-dotfiles": {
+                "with-starship-config": false,
+                "with-sheldon-config": false,
+                "with-some-tools": false,
+                "overwrite-zshrc": true
             }
         }
     },
     "install_all": {
         "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
         "features": {
-            "starship-sheldon": {
+            "zsh-dotfiles": {
                 "with-starship-config": true,
                 "with-sheldon-config": true,
                 "with-some-tools": true,
-                "write-zshrc": true
+                "overwrite-zshrc": true
             }
         }
     }
