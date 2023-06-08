@@ -1,0 +1,45 @@
+{
+    "name": "Debian",
+    "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+    "postCreateCommand": "test -e ${containerWorkspaceFolder}/.devcontainer/entry.sh && ${containerWorkspaceFolder}/.devcontainer/entry.sh",
+    "remoteUser": "vscode",
+    "mounts": [
+        "source=${localEnv:HOME}/.ssh/,target=/home/vscode/.ssh/,type=bind",
+        "source=${localEnv:HOME}/.zsh_history,target=/home/vscode/.zsh_history,type=bind",
+        "source=${localEnv:HOME}/.config/git/config,target=/home/vscode/.config/git/config,type=bind",
+        "source=${localEnv:HOME}/.config/gh/,target=/home/vscode/.config/gh/,type=bind",
+        "source=${localEnv:HOME}/.config/gcloud/,target=/home/vscode/.config/gcloud/,type=bind",
+        "source=${localEnv:HOME}/.aws/,target=/home/vscode/.aws/,type=bind",
+        "source=${localEnv:HOME}/.kube/,target=/home/vscode/.kube/,type=bind",
+        "source=${localEnv:HOME}/.helm/,target=/home/vscode/.helm/,type=bind",
+    ],
+    "features": {
+        "ghcr.io/devcontainers/features/docker-outside-of-docker": "latest",
+        // "ghcr.io/devcontainers/features/python": "latest",
+        "ghcr.io/devcontainers/features/go": "latest",
+        "ghcr.io/devcontainers/features/rust": "latest",
+        "ghcr.io/devcontainers/features/node": "latest",
+        // "ghcr.io/devcontainers/features/aws-cli": "latest",
+        // "ghcr.io/devcontainers/features/kubectl-helm-minikube": "latest",
+        "ghcr.io/devcontainers/features/github-cli": "latest",
+        "ghcr.io/hayas1/devcontainer-features/zsh-dotfiles": {
+            "with-starship-config": true,
+            "with-sheldon-config": true,
+            "with-some-tools": true,
+            "overwrite-zshrc": true
+        },
+        "ghcr.io/hayas1/devcontainer-features/starship": {},
+        "ghcr.io/hayas1/devcontainer-features/sheldon": {},
+        "ghcr.io/hayas1/devcontainer-features/gcloud-cli": {
+            "with-kubectl": "latest",
+            "with-helm": "latest",
+            "completion": "zsh"
+        },
+        "ghcr.io/hayas1/devcontainer-features/pyenv": {
+            "with": "latest" // install python also
+        },
+        "ghcr.io/hayas1/devcontainer-features/tfenv": {
+            "with": "latest" // install terraform also
+        },
+    }
+}
