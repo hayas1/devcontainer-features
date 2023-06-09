@@ -11,7 +11,7 @@ lib="${_REMOTE_USER_HOME}/.pyenv"
 bin=/usr/local/bin
 # dependencies
 apt-get update -y && apt-get install -y git build-essential zlib1g-dev libssl-dev libsqlite3-dev \
-    libbz2-dev libncurses5-dev libgdbm-dev liblzma-dev tcl-dev tk-dev libreadline-dev libffi-devel &&
+    libbz2-dev libncurses5-dev libgdbm-dev liblzma-dev tcl-dev tk-dev libreadline-dev libffi-dev &&
     apt-get clean && rm -rf /var/lib/apt/lists
 # https://github.com/pyenv/pyenv#basic-github-checkout
 git clone https://github.com/pyenv/pyenv.git "$lib" --branch "${VERSION}" --depth 1
