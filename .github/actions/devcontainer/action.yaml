@@ -27,7 +27,7 @@ runs:
       run: |
         cat .devcontainer/devcontainer.json |
           json5-to-json |
-          jq '.mounts |= map(select(. | contains("source=${localEnv:HOME}/.config/gh")))' >./tmp.json &&
+          jq 'del(.mounts)' >./tmp.json &&
           mv ./tmp.json .devcontainer/devcontainer.json
       shell: bash
     - name: Login to GitHub Container Registry
@@ -41,3 +41,4 @@ runs:
       with:
         imageName: ${{ inputs.image }}
         runCmd: ${{ inputs.run }}
+        env: {GITHUB_TOKEN: ${{ inputs.token }}}
