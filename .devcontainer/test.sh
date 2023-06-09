@@ -5,7 +5,7 @@ starship --version
 sheldon --version
 
 python --version
-go --version
+go version
 cargo --version
 node --version
 
