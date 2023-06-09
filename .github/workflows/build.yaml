@@ -18,4 +18,4 @@ jobs:
         with:
           username: ${{ github.repository_owner }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          run: mv ${HOME}/.zshrc ${HOME}/.zshenv && ./.devcontainer/test.sh'
+          run: 'mv ${HOME}/.zshrc ${HOME}/.zshenv && ./.devcontainer/test.sh'
