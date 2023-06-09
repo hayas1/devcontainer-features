@@ -16,5 +16,6 @@ if type go >/dev/null 2>&1; then
 fi
 
 # project settings
-npm install -g @devcontainers/cli
-gh extension install https://github.com/nektos/gh-act
+# EXAMPLE:
+# npm install -g @devcontainers/cli
+# gh extension install https://github.com/nektos/gh-act

@@ -41,5 +41,3 @@ runs:
       with:
         imageName: ${{ inputs.image }}
         runCmd: ${{ inputs.run }}
-        env:
-          GITHUB_TOKEN: ${{ inputs.token }}
