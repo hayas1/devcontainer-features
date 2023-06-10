@@ -1,4 +1,4 @@
-name: Release dev container features
+name: Release devcontainer features
 on:
   push:
     branches: [main]
