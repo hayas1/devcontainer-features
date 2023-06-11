@@ -23,13 +23,15 @@
         // "ghcr.io/devcontainers/features/kubectl-helm-minikube": "latest",
         "ghcr.io/devcontainers/features/github-cli": "latest",
         "ghcr.io/hayas1/devcontainer-features/zsh-dotfiles": {
-            "with-starship-config": true,
-            "with-sheldon-config": true,
-            "with-some-tools": true,
-            "overwrite-zshrc": true
+            "plugin-manager": "oh-my-zsh",
+            "theme": "powerlevel10k",
+            "with-plugins": true,
+            "with-tools": true,
+            "with-aliases": true
         },
-        "ghcr.io/hayas1/devcontainer-features/starship": {},
-        "ghcr.io/hayas1/devcontainer-features/sheldon": {},
+        "ghcr.io/hayas1/devcontainer-features/powerlevel10k": {
+            "plugin-manager": "oh-my-zsh"
+        },
         "ghcr.io/hayas1/devcontainer-features/gcloud-cli": {
             "with-kubectl": "latest",
             "with-helm": "latest",
