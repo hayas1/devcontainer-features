@@ -15,10 +15,11 @@ Setup zsh-dotfiles
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| with-starship-config | if false, do not use starship, or use default config or mount `~/.config/starship.yaml` | boolean | true |
-| with-sheldon-config | if false, do not use sheldon, or use default config or mount `~/.config/sheldon/plugins.yaml` | boolean | true |
-| with-some-tools | if false, do not install zsh, git, sudo, exa, ripgrep and so on | boolean | true |
-| overwrite-zshrc | if false, do not overwrite `~/.zshrc` (append only) | boolean | true |
+| plugin-manager | used plugin manager (will be installed other feature) | string | without |
+| theme | used theme (will be installed other feature) | string | without |
+| with-plugins | if false, do not install zsh-completions, zsh-autosuggestions, and so on | boolean | false |
+| with-tools | if false, do not install zsh, git, sudo, exa, ripgrep and so on | boolean | false |
+| with-aliases | if false, do not set aliases | boolean | false |
 
 ## Customizations
 
