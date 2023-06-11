@@ -13,6 +13,8 @@ case "$PLUGIN_MANAGER" in
     echo >>"${_REMOTE_USER_HOME}/.zshrc"
     echo '# powerlevel10k installation' >>"${_REMOTE_USER_HOME}/.zshrc"
     echo 'source "${HOME}/.powerlevel10k/powerlevel10k.zsh-theme"' >>"${_REMOTE_USER_HOME}/.zshrc"
+    echo '# load powerlevel10k configure' >>"${_REMOTE_USER_HOME}/.zshrc"
+    echo '[[ -e "${HOME}/.p10k.zsh" ]] && source "${HOME}/.p10k.zsh"' >>"${_REMOTE_USER_HOME}/.zshrc"
     ;;
 'oh-my-zsh')
     # https://github.com/romkatv/powerlevel10k#oh-my-zsh
