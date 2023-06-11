@@ -1,0 +1,34 @@
+{
+    "id": "starship",
+    "version": "0.0.1",
+    "name": "starship",
+    "documentationURL": "https://github.com/hayas1/devcontainer-features/tree/main/src/starship",
+    "description": "Install starship",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "master",
+                "v1.18.0",
+                "v1.17.0"
+            ],
+            "default": "master",
+            "description": "install ref of tfenv github"
+        },
+        "plugin-manager": {
+            "type": "string",
+            "enum": [
+                "default",
+                "oh-my-zsh",
+                "sheldon"
+            ],
+            "default": "default",
+            "description": "used plugin manager"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils",
+        "ghcr.io/hayas1/devcontainer-features/zsh-dotfiles",
+        "ghcr.io/hayas1/devcontainer-features/sheldon"
+    ]
+}
