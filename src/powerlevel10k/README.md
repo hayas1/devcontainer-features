@@ -16,7 +16,7 @@ Install starship
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | install ref of tfenv github | string | master |
-| plugin-manager | used plugin manager | string | default |
+| plugin-manager | used plugin manager | string | without |
 
 
 
