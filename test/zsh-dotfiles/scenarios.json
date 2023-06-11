@@ -1,23 +1,34 @@
 {
-    "install_minimal": {
+    "install_p10k_omz": {
         "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
         "features": {
             "zsh-dotfiles": {
-                "with-starship-config": false,
-                "with-sheldon-config": false,
-                "with-some-tools": false,
-                "overwrite-zshrc": true
+                "plugin-manager": "oh-my-zsh",
+                "theme": "powerlevel10k",
+                "with-plugins": true,
+                "with-tools": true,
+                "with-aliases": true
             }
         }
     },
-    "install_all": {
+    "install_starship_sheldon": {
         "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
         "features": {
             "zsh-dotfiles": {
-                "with-starship-config": true,
-                "with-sheldon-config": true,
-                "with-some-tools": true,
-                "overwrite-zshrc": true
+                "plugin-manager": "sheldon",
+                "theme": "starship",
+                "with-plugins": true,
+                "with-tools": true,
+                "with-aliases": true
+            }
+        }
+    },
+    "install_p10k_theme_only": {
+        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "features": {
+            "zsh-dotfiles": {
+                "plugin-manager": "without",
+                "theme": "powerlevel10k"
             }
         }
     }
