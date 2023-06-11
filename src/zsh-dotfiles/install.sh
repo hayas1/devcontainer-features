@@ -21,6 +21,9 @@ if [ "$WITH_PLUGINS" = "true" ]; then
         exit 1
         ;;
     'oh-my-zsh')
+        # dependencies
+        apt-get update -y && apt-get install -y git &&
+            apt-get clean && rm -rf /var/lib/apt/lists
         ./plugins-omz.sh
         ;;
     'sheldon')
