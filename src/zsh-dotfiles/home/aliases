@@ -1,0 +1,15 @@
+if type exa >/dev/null 2>&1; then
+    alias ls='exa --git --icons'
+    alias la='exa -a --icons'
+    alias ll='exa -aal --icons'
+    alias lt='exa -T -L 3 -a -I "node_modules|.git|.cache" --icons'
+    alias ltl='exa -T -L 3 -a -I "node_modules|.git|.cache" -l --icons'
+fi
+if type batcat >/dev/null 2>&1; then
+    alias cat='batcat --paging=never --style=header --theme=TwoDark'
+    alias less='batcat --theme=TwoDark'
+fi
+type rg >/dev/null 2>&1 && alias grep=rg
+type htop >/dev/null 2>&1 && alias psp=htop
+type hexyl >/dev/null 2>&1 && alias odp=hexyl
+type fdfind >/dev/null 2>&1 && alias fd=fdfind
