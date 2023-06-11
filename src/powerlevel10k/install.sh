@@ -7,7 +7,7 @@ apt-get update -y && apt-get install -y git &&
     apt-get clean && rm -rf /var/lib/apt/lists
 
 case "$PLUGIN_MANAGER" in
-'default')
+'without')
     git clone 'https://github.com/romkatv/powerlevel10k.git' --branch "${VERSION}" --depth 1 \
         "${_REMOTE_USER_HOME}/.powerlevel10k"
     echo >>"${_REMOTE_USER_HOME}/.zshrc"

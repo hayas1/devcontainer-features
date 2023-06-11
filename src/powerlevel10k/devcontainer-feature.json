@@ -18,11 +18,11 @@
         "plugin-manager": {
             "type": "string",
             "enum": [
-                "default",
+                "without",
                 "oh-my-zsh",
                 "sheldon"
             ],
-            "default": "default",
+            "default": "without",
             "description": "used plugin manager"
         }
     },
