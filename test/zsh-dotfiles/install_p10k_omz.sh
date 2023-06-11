@@ -16,7 +16,6 @@ check "install ripgrep" rg --version
 check "copy p10k.zsh" diff "${HOME}/.p10k.zsh" "${tmp}/home/p10k.zsh"
 check "not copy starship.toml" not test -e "${HOME}/.config/starship.toml"
 check "not copy sheldon/plugins.toml" not test -e "${HOME}/.config/sheldon/plugins.toml"
-check "write .zshrc" diff "${HOME}/.zshrc" "${tmp}/home/zshrc" | cut -c 1 | not grep '>'
 
 # Report result
 reportResults

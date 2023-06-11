@@ -6,6 +6,9 @@ source dev-container-features-test-lib
 
 # test tools
 tmp=/tmp/devcontainer-feature-zsh-dotfiles/test
+not() {
+    ! "$@"
+}
 
 # Definition specific tests
 check "install exa" exa --version
