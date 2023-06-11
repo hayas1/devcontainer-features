@@ -27,7 +27,7 @@ case "$PLUGIN_MANAGER" in
     # https://sheldon.cli.rs/Examples.html#powerlevel10k
     # TODO version
     echo y |
-        sheldon --config-dir "${_REMOTE_USER_HOME}/.config" \
+        sheldon --config-dir "${_REMOTE_USER_HOME}/.config/sheldon" \
             add powerlevel10k --github romkatv/powerlevel10k
     ;;
 *)
