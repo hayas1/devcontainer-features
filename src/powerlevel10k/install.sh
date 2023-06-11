@@ -2,10 +2,6 @@
 VERSION=${VERSION:-"master"}
 PLUGIN_MANAGER=${PLUGIN_MANAGER:-"oh-my-zsh"}
 
-# for test
-tmp=/tmp/devcontainer-feature-powerlevel10k/test
-mkdir -p "$tmp" && cp -r . "$tmp"
-
 # dependencies
 apt-get update -y && apt-get install -y git &&
     apt-get clean && rm -rf /var/lib/apt/lists
@@ -24,7 +20,8 @@ case "$PLUGIN_MANAGER" in
         "${ZSH_CUSTOM:-$_REMOTE_USER_HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
     sed 's,^\s*ZSH_THEME=(.*)$,ZSH_THEME="powerlevel10k/powerlevel10k",g' -ri "${_REMOTE_USER_HOME}/.zshrc"
     echo >>"${_REMOTE_USER_HOME}/.zshrc"
-    cat "./zshrc" >>"${_REMOTE_USER_HOME}/.zshrc"
+    echo '# load powerlevel10k configure' >>"${_REMOTE_USER_HOME}/.zshrc"
+    echo '[[ -e "${HOME}/.p10k.zsh" ]] && source "${HOME}/.p10k.zsh"' >>"${_REMOTE_USER_HOME}/.zshrc"
     ;;
 'sheldon')
     # https://sheldon.cli.rs/Examples.html#powerlevel10k

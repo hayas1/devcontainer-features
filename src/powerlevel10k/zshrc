@@ -1,2 +1,0 @@
-# load powerlevel10k configure
-[[ -e "${HOME}/.p10k.zsh" ]] && source "${HOME}/.p10k.zsh"
