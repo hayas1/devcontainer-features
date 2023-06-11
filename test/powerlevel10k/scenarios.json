@@ -10,15 +10,11 @@
     "install_with_sheldon": {
         "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
         "features": {
-            "sheldon": {},
+            "ghcr.io/hayas1/devcontainer-features/sheldon": {},
             "powerlevel10k": {
                 "plugin-manager": "sheldon"
             }
-        },
-        "overrideFeatureInstallOrder": [
-            "sheldon",
-            "powerlevel10k"
-        ]
+        }
     },
     "install_fixed": {
         "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
