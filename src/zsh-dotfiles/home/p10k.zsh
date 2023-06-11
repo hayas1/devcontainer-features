@@ -78,6 +78,7 @@
     haskell_stack           # haskell version from stack (https://haskellstack.org/)
     kubecontext             # current kubernetes context (https://kubernetes.io/)
     terraform               # terraform workspace (https://www.terraform.io)
+    tfenv                   # custom terraform prompt (https://github.com/romkatv/powerlevel10k/issues/1622)
     # terraform_version     # terraform version (https://www.terraform.io)
     aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
     aws_eb_env              # aws elastic beanstalk environment (https://aws.amazon.com/elasticbeanstalk/)
@@ -1253,6 +1254,16 @@
       '*'         OTHER)
   typeset -g POWERLEVEL9K_TERRAFORM_OTHER_FOREGROUND=38
   # typeset -g POWERLEVEL9K_TERRAFORM_OTHER_VISUAL_IDENTIFIER_EXPANSION='⭐'
+
+  #############[ tfenv: terraform environment (https://github.com/tfutils/tfenv) ]##############
+  # Show terraform environment only when the command you are typing invokes one of these tools.
+  typeset -g POWERLEVEL9K_TFENV_SHOW_ON_COMMAND='terraform|tf|tfenv'
+  # custom tfenv indicator
+  function prompt_tfenv {
+    if type tfenv >/dev/null 2>&1; then
+      p10k segment -f cyan -i '' -t "$(tfenv version-name)" # TODO terraform icon
+    fi
+  }
 
   #############[ terraform_version: terraform version (https://www.terraform.io) ]##############
   # Terraform version color.
