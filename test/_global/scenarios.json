@@ -1,8 +1,32 @@
 {
-    "all": {
+    "all_powerlevel10k": {
         "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
         "features": {
-            "zsh-dotfiles": {},
+            "zsh-dotfiles": {
+                "plugin-manager": "oh-my-zsh",
+                "theme": "powerlevel10k",
+                "with-plugins": true,
+                "with-tools": true,
+                "with-aliases": true
+            },
+            "powerlevel10k": {
+                "plugin-manager": "oh-my-zsh"
+            },
+            "gcloud-cli": {},
+            "tfenv": {},
+            "pyenv": {}
+        }
+    },
+    "all_starship_sheldon": {
+        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "features": {
+            "zsh-dotfiles": {
+                "plugin-manager": "sheldon",
+                "theme": "starship",
+                "with-plugins": true,
+                "with-tools": true,
+                "with-aliases": true
+            },
             "starship": {},
             "sheldon": {},
             "gcloud-cli": {},
