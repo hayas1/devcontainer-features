@@ -1,0 +1,27 @@
+{
+    "install_with_omz": {
+        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "features": {
+            "powerlevel10k": {
+                "plugin-manager": "oh-my-zsh"
+            }
+        }
+    },
+    "install_with_sheldon": {
+        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "features": {
+            "sheldon": {},
+            "powerlevel10k": {
+                "plugin-manager": "sheldon"
+            }
+        }
+    },
+    "install_fixed": {
+        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "features": {
+            "powerlevel10k": {
+                "version": "v1.18.0"
+            }
+        }
+    }
+}
