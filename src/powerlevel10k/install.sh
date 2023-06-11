@@ -25,7 +25,7 @@ case "$PLUGIN_MANAGER" in
     ;;
 'sheldon')
     # https://sheldon.cli.rs/Examples.html#powerlevel10k
-    sheldon add powerlevel10k --github romkatv/powerlevel10k
+    echo y | sheldon add powerlevel10k --github romkatv/powerlevel10k
     ;;
 *)
     echo "unrecognized plugin manager: ${PLUGIN_MANAGER}"
