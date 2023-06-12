@@ -1,9 +1,9 @@
 {
-    "id": "starship",
+    "id": "powerlevel10k",
     "version": "0.0.1",
-    "name": "starship",
-    "documentationURL": "https://github.com/hayas1/devcontainer-features/tree/main/src/starship",
-    "description": "Install starship",
+    "name": "powerlevel10k",
+    "documentationURL": "https://github.com/hayas1/devcontainer-features/tree/main/src/powerlevel10k",
+    "description": "Install powerlevel10k",
     "options": {
         "version": {
             "type": "string",
