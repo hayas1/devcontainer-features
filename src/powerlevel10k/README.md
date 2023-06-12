@@ -1,13 +1,13 @@
 
-# starship (starship)
+# powerlevel10k (powerlevel10k)
 
-Install starship
+Install powerlevel10k
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/hayas1/devcontainer-features/starship:0": {}
+    "ghcr.io/hayas1/devcontainer-features/powerlevel10k:0": {}
 }
 ```
 
