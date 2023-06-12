@@ -1,8 +1,8 @@
 #!/bin/sh
 set -e
 
-starship --version
-sheldon --version
+# starship --version
+# sheldon --version
 
 python --version
 go version
