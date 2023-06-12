@@ -18,3 +18,16 @@ jobs:
           base-path-to-features: "./src"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  build:
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/devcontainer
+        with:
+          username: ${{ github.repository_owner }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          run: 'mv "${HOME}/.zshrc" "${HOME}/.zshenv" && zsh .devcontainer/test.sh'
