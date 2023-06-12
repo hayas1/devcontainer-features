@@ -22,7 +22,8 @@
         "features": {
             "ghcr.io/devcontainers/features/common-utils": {
                 "installZsh": true,
-                "installOhMyZsh": true
+                "installOhMyZsh": true,
+                "configureZshAsDefaultShell": true
             },
             "zsh-dotfiles": {
                 "plugin-manager": "oh-my-zsh",
