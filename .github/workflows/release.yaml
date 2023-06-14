@@ -31,3 +31,13 @@ jobs:
           username: ${{ github.repository_owner }}
           token: ${{ secrets.GITHUB_TOKEN }}
           run: 'mv "${HOME}/.zshrc" "${HOME}/.zshenv" && zsh .devcontainer/test.sh'
+  script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: check script
+        run: |
+          curl -fsL 'https://github.com/hayas1/devcontainer-features/raw/main/init.sh' |
+            DEVCONTAINER_DIR=./devcontainer sh &&
+            diff ./.devcontainer/devcontainer.json ./devcontainer/devcontainer.json &&
+            diff ./.devcontainer/entry.sh ./devcontainer/entry.sh
