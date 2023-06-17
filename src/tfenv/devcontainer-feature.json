@@ -1,6 +1,6 @@
 {
     "id": "tfenv",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "name": "tfenv",
     "documentationURL": "https://github.com/hayas1/devcontainer-features/tree/main/src/tfenv",
     "description": "Install tfenv",
@@ -8,12 +8,13 @@
         "version": {
             "type": "string",
             "proposals": [
+                "latest",
                 "master",
                 "v3.0.0",
                 "v2.2.3",
                 "v2.2.2"
             ],
-            "default": "master",
+            "default": "latest",
             "description": "install ref of tfenv github"
         },
         "with": {

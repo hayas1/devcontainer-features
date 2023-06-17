@@ -15,7 +15,7 @@ Install tfenv
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| version | install ref of tfenv github | string | master |
+| version | install ref of tfenv github | string | latest |
 | with | with terraform | string | none |
 
 ## Customizations

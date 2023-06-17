@@ -1,6 +1,6 @@
 {
     "id": "powerlevel10k",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "name": "powerlevel10k",
     "documentationURL": "https://github.com/hayas1/devcontainer-features/tree/main/src/powerlevel10k",
     "description": "Install powerlevel10k",
@@ -8,11 +8,12 @@
         "version": {
             "type": "string",
             "proposals": [
+                "latest",
                 "master",
                 "v1.18.0",
                 "v1.17.0"
             ],
-            "default": "master",
+            "default": "latest",
             "description": "install ref of tfenv github"
         },
         "plugin-manager": {
