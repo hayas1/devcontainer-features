@@ -3,7 +3,7 @@
         "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
         "features": {
             "pyenv": {
-                "version": "master",
+                "version": "latest",
                 "with": "latest"
             }
         }
