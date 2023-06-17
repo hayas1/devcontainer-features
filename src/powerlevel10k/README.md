@@ -15,7 +15,7 @@ Install powerlevel10k
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| version | install ref of tfenv github | string | master |
+| version | install ref of tfenv github | string | latest |
 | plugin-manager | used plugin manager | string | without |
 
 

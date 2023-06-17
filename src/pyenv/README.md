@@ -15,7 +15,7 @@ Install pyenv
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| version | install ref of pyenv github | string | master |
+| version | install ref of pyenv github | string | latest |
 | with | with python | string | none |
 | rc-file | setting for selected shell | string | .zshrc |
 
