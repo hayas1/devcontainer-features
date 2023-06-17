@@ -13,6 +13,13 @@
         "source=${localEnv:HOME}/.kube/,target=/home/vscode/.kube/,type=bind",
         "source=${localEnv:HOME}/.helm/,target=/home/vscode/.helm/,type=bind",
     ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                // "mhutchie.git-graph",
+            ]
+        }
+    },
     "features": {
         "ghcr.io/devcontainers/features/docker-outside-of-docker": "latest",
         // "ghcr.io/devcontainers/features/python": "latest",
