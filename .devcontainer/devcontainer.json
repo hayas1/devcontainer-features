@@ -22,7 +22,10 @@
     },
     "features": {
         "ghcr.io/devcontainers/features/docker-outside-of-docker": "latest",
-        // "ghcr.io/devcontainers/features/python": "latest",
+        // "ghcr.io/devcontainers/features/python": {
+        //     "version": "latest",
+        //     "httpProxy": "${localEnv:http_proxy}"
+        // },
         "ghcr.io/devcontainers/features/go": "latest",
         "ghcr.io/devcontainers/features/rust": "latest",
         "ghcr.io/devcontainers/features/node": "latest",
