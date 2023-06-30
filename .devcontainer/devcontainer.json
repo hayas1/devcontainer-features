@@ -4,6 +4,7 @@
     "postCreateCommand": "test -e ${containerWorkspaceFolder}/.devcontainer/entry.sh && zsh ${containerWorkspaceFolder}/.devcontainer/entry.sh",
     "remoteUser": "vscode",
     "mounts": [
+        // "source=${localEnv:HOME}/bin/,target=/home/vscode/bin/,type=bind",
         "source=${localEnv:HOME}/.ssh/,target=/home/vscode/.ssh/,type=bind",
         "source=${localEnv:HOME}/.zsh_history,target=/home/vscode/.zsh_history,type=bind",
         "source=${localEnv:HOME}/.config/git/,target=/home/vscode/.config/git/,type=bind",
