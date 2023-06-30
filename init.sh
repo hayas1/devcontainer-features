@@ -16,7 +16,7 @@ fi
 # prepare mount source in home directory (# TODO parse json-with-comment)
 sources="$(
     grep -E '^\s*"source=(.*)"' <"${DEVCONTAINER_DIR}/devcontainer.json" |
-        sed -r 's/^\s*"source=(.*),target=(.*)",?$/\1/' |
+        sed -r 's/^\s*"source=(.*),target=(.*)"\s*,?.*$/\1/' |
         sed -r 's/localEnv://g'
 )"
 for s in $sources; do
