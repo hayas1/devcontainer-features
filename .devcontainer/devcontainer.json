@@ -6,7 +6,7 @@
     "mounts": [
         "source=${localEnv:HOME}/.ssh/,target=/home/vscode/.ssh/,type=bind",
         "source=${localEnv:HOME}/.zsh_history,target=/home/vscode/.zsh_history,type=bind",
-        "source=${localEnv:HOME}/.config/git/config,target=/home/vscode/.config/git/config,type=bind",
+        "source=${localEnv:HOME}/.config/git/,target=/home/vscode/.config/git/,type=bind",
         "source=${localEnv:HOME}/.config/gh/,target=/home/vscode/.config/gh/,type=bind",
         "source=${localEnv:HOME}/.config/gcloud/,target=/home/vscode/.config/gcloud/,type=bind",
         "source=${localEnv:HOME}/.aws/,target=/home/vscode/.aws/,type=bind",

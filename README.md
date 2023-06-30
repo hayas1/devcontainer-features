@@ -10,5 +10,5 @@ Copy 2 files [devcontainer.json](./.devcontainer/devcontainer.json) and [entry.s
 
 Or run next command.
 ```sh
-curl -fsL 'https://github.com/hayas1/devcontainer-features/raw/main/init.sh' | sh
+curl -fsL 'https://github.com/hayas1/devcontainer-features/raw/main/init.sh' | bash
 ```
