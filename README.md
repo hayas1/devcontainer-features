@@ -6,7 +6,7 @@ This repository provide [Dev Container Features](https://code.visualstudio.com/d
 What features are provided, see [./src/](./src/) also. These `README.md` are auto-generated, and contain description, usage examples, and options.
 
 ## example usage
-Copy 2 files [devcontainer.json](./.devcontainer/devcontainer.json) and [entry.sh](./.devcontainer/entry.sh) to `.devcontainer` directory.
+Copy 2 files [devcontainer.json](./.devcontainer/devcontainer.json) and [entry.sh](./.devcontainer/entry.sh) to `.devcontainer` directory. And prepare directories or files that source of mounts, such as `.git/config/`, `.zsh_history`, and so on.
 
 Or run next command.
 ```sh
