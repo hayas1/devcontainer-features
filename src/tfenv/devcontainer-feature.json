@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "name": "tfenv",
     "documentationURL": "https://github.com/hayas1/devcontainer-features/tree/main/src/tfenv",
-    "description": "Install tfenv",
+    "description": "Install [tfenv](https://github.com/tfutils/tfenv)",
     "options": {
         "version": {
             "type": "string",
