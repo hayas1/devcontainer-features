@@ -1,7 +1,7 @@
 
 # starship (starship)
 
-Install starship
+Install [starship](https://github.com/starship/starship)
 
 ## Example Usage
 

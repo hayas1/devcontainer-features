@@ -1,7 +1,7 @@
 
 # sheldon (sheldon)
 
-Install sheldon
+Install [sheldon](https://github.com/rossmacarthur/sheldon)
 
 ## Example Usage
 

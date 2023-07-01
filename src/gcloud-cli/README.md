@@ -1,7 +1,7 @@
 
 # gcloud-cli (gcloud-cli)
 
-Install gcloud-cli with kubectl and helm (optional)
+Install [gcloud-cli](https://cloud.google.com/sdk/gcloud) with [kubectl](https://github.com/kubernetes/kubectl) and [helm](https://github.com/helm/helm) (optional)
 
 ## Example Usage
 

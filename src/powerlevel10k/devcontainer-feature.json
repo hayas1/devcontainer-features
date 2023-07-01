@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "name": "powerlevel10k",
     "documentationURL": "https://github.com/hayas1/devcontainer-features/tree/main/src/powerlevel10k",
-    "description": "Install powerlevel10k",
+    "description": "Install [powerlevel10k](https://github.com/romkatv/powerlevel10k)",
     "options": {
         "version": {
             "type": "string",
