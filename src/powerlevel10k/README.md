@@ -1,7 +1,7 @@
 
 # powerlevel10k (powerlevel10k)
 
-Install powerlevel10k
+Install [powerlevel10k](https://github.com/romkatv/powerlevel10k)
 
 ## Example Usage
 

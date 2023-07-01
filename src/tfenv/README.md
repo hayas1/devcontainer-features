@@ -1,7 +1,7 @@
 
 # tfenv (tfenv)
 
-Install tfenv
+Install [tfenv](https://github.com/tfutils/tfenv)
 
 ## Example Usage
 
