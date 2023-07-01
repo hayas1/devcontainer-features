@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "name": "starship",
     "documentationURL": "https://github.com/hayas1/devcontainer-features/tree/main/src/starship",
-    "description": "Install starship",
+    "description": "Install [starship](https://github.com/starship/starship)",
     "options": {
         "rc-file": {
             "type": "string",
