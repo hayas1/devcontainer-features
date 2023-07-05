@@ -21,6 +21,9 @@
             ]
         }
     },
+    // "remoteEnv": {
+    //     "PATH": "${containerEnv:PATH}:/home/vscode/bin"
+    // },
     "features": {
         "ghcr.io/devcontainers/features/docker-outside-of-docker": "latest",
         // "ghcr.io/devcontainers/features/python": {
