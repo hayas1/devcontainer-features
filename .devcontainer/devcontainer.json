@@ -14,6 +14,9 @@
         "source=${localEnv:HOME}/.kube/,target=/home/vscode/.kube/,type=bind",
         "source=${localEnv:HOME}/.helm/,target=/home/vscode/.helm/,type=bind",
     ],
+    // "remoteEnv": {
+    //     "PATH": "${containerEnv:PATH}:/home/vscode/bin"
+    // },
     "customizations": {
         "vscode": {
             "extensions": [
