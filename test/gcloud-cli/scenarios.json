@@ -18,9 +18,9 @@
         "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
         "features": {
             "gcloud-cli": {
-                "version": "433.0.1-0",
-                "with-kubectl": "1.27.3-00",
-                "with-helm": "3.12.0-1"
+                "version": "440.0.0-0",
+                "with-kubectl": "1.27.4-00",
+                "with-helm": "3.12.2-1"
             }
         }
     },
