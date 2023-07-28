@@ -16,6 +16,7 @@ check "install ripgrep" rg --version
 check "copy starship.toml" diff "${HOME}/.config/starship.toml" "${tmp}/home/config/starship.toml"
 check "copy sheldon/plugins.toml" diff "${HOME}/.config/sheldon/plugins.toml" "${tmp}/home/config/sheldon/plugins.toml"
 check "overwrite .zshrc" diff "${HOME}/.zshrc" "${tmp}/home/zshrc" | cut -c 1 | not grep '>'
+check "history settings in ~/.zshrc" grep 'export SAVEHIST=100000' <"${HOME}/.zshrc"
 
 # Report result
 reportResults
