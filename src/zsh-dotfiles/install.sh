@@ -9,9 +9,12 @@ WITH_ALIASES=${WITH_ALIASES:-"false"}
 tmp=/tmp/devcontainer-feature-zsh-dotfiles/test
 mkdir -p "$tmp" && cp -r . "$tmp"
 
-if [ "$PLUGIN_MANAGER" = "sheldon" ]; then
+if [ "$PLUGIN_MANAGER" != 'oh-my-zsh' ]; then
     # overwrite .zshrc
     cat ./home/zshrc >"${_REMOTE_USER_HOME}/.zshrc"
+else
+    # only history settings
+    grep 'history' <./home/zshrc >>"${_REMOTE_USER_HOME}/.zshrc"
 fi
 
 if [ "$WITH_PLUGINS" = "true" ]; then
