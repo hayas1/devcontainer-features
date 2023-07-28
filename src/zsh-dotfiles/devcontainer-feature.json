@@ -1,6 +1,6 @@
 {
     "id": "zsh-dotfiles",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "name": "zsh-dotfiles",
     "documentationURL": "https://github.com/hayas1/devcontainer-features/tree/main/src/zsh-dotfiles",
     "description": "Setup zsh-dotfiles",

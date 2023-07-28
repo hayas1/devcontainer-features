@@ -16,6 +16,7 @@ check "not install exa" not type exa >/dev/null
 check "not install ripgrep" not type rg >/dev/null
 check "not copy starship.toml" not test -e "${HOME}/.config/starship.toml"
 check "not copy sheldon/plugins.toml" not test -e "${HOME}/.config/sheldon/plugins.toml"
+check "history settings in ~/.zshrc" grep 'export SAVEHIST=100000' <"${HOME}/.zshrc"
 
 # Report result
 reportResults
