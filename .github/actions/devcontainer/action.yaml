@@ -41,7 +41,7 @@ runs:
         username: ${{ inputs.username }}
         password: ${{ inputs.token }}
     - name: Build devcontainer
-      uses: devcontainers/ci@v0.2
+      uses: devcontainers/ci@v0.3
       with:
         imageName: ${{ inputs.image }}
         runCmd: ${{ inputs.testing }}
