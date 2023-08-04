@@ -1,5 +1,6 @@
 name: Release devcontainer features
 on:
+  workflow_dispatch:
   push:
     branches: [main]
 
@@ -30,7 +31,8 @@ jobs:
         with:
           username: ${{ github.repository_owner }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          run: 'mv "${HOME}/.zshrc" "${HOME}/.zshenv" && zsh .devcontainer/test.sh'
+          prepare: bash ./init.sh
+          testing: mv "${HOME}/.zshrc" "${HOME}/.zshenv" && zsh .devcontainer/test.sh
   script:
     runs-on: ubuntu-latest
     steps:
