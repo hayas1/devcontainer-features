@@ -21,7 +21,7 @@ apt-get update -y && apt-get install -y curl git build-essential zlib1g-dev libs
 repository='https://github.com/pyenv/pyenv'
 if [ "$VERSION" = "latest" ]; then
     VERSION=$(
-        curl -fsL -o /dev/null -w %{url_effective} "${repository}/releases/latest" |
+        curl -fsL -o /dev/null -w "%{url_effective}" "${repository}/releases/latest" |
             sed -r "s,^${repository}/releases/tag/(.*)$,\1,g"
     )
 fi
@@ -34,15 +34,14 @@ ln -s "$lib/bin/pyenv" "$bin/pyenv"
 
 # install python also ?
 if [ "$WITH" != "none" ]; then
-    if [ "$WITH" = "latest" ]; then
-        WITH="3:latest"
-        GLOBAL=3
-    else
-        GLOBAL=$WITH
-    fi
     export PYENV_ROOT="${_REMOTE_USER_HOME}/.pyenv" && eval "$(pyenv init -)"
-    pyenv install "$WITH"
-    pyenv global "$GLOBAL"
+    if [ "$WITH" = "latest" ]; then
+        pyenv install "$(pyenv latest 3)"
+        pyenv global "$(pyenv latest 3)"
+    else
+        pyenv install "$WITH"
+        pyenv global "$WITH"
+    fi
 fi
 
 # run command
