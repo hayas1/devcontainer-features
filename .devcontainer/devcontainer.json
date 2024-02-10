@@ -14,11 +14,11 @@
         "source=${localEnv:HOME}/.kube/,target=/home/vscode/.kube/,type=bind",
         "source=${localEnv:HOME}/.helm/,target=/home/vscode/.helm/,type=bind",
     ],
-    "initializeCommand": "docker network inspect devcontainer-network >/dev/null 2>&1 || docker network create devcontainer-network",
-    "runArgs": [
-        "--network=devcontainer-network"
-    ],
-    // "remoteEnv": {
+    // "initializeCommand": "docker network inspect devcontainer-network >/dev/null 2>&1 || docker network create devcontainer-network",
+    // "runArgs": [
+    //     "--network=devcontainer-network"
+    // ],
+    // // "remoteEnv": {
     //     "PATH": "${containerEnv:PATH}:/home/vscode/bin"
     // },
     "customizations": {
