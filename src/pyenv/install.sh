@@ -37,7 +37,7 @@ if [ "$WITH" != "none" ]; then
     export PYENV_ROOT="${_REMOTE_USER_HOME}/.pyenv" && eval "$(pyenv init -)"
     if [ "$WITH" = "latest" ]; then
         pyenv install 3
-        pyenv global "$(pyenv latest 3)"
+        pyenv global 3
     else
         pyenv install "$WITH"
         pyenv global "$WITH"
