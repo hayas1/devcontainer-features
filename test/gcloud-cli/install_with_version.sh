@@ -9,7 +9,7 @@ not() {
 }
 
 # Definition specific tests
-check "check for gcloud" gcloud --version | grep 'Google Cloud SDK 451.0.1'
+check "check for gcloud" gcloud --version | grep 'Google Cloud SDK 463.0.0'
 check "check for kubectl" kubectl version --client | grep 'GitVersion:"v1.28.2"'
 check "check for helm" helm version --client | grep 'Version:"v3.13.1"'
 check "check for gcloud completion" diff "${HOME}/.zshrc" "${tmp}/zshrc/gcloud.zshrc" | cut -c 1 | not grep '>'
