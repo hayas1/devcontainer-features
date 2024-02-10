@@ -20,7 +20,7 @@
             "gcloud-cli": {
                 "version": "463.0.0-0",
                 "with-kubectl": "1.28.2-00",
-                "with-helm": "3.13.1-1"
+                "with-helm": "3.14.0-1"
             }
         }
     },
