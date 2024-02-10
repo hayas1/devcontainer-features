@@ -14,7 +14,7 @@ apt-get update -y && apt-get install -y curl zip git &&
 repository='https://github.com/tfutils/tfenv'
 if [ "$VERSION" = "latest" ]; then
     VERSION=$(
-        curl -fsL -o /dev/null -w %{url_effective} "${repository}/releases/latest" |
+        curl -fsL -o /dev/null -w "%{url_effective}" "${repository}/releases/latest" |
             sed -r "s,^${repository}/releases/tag/(.*)$,\1,g"
     )
 fi
