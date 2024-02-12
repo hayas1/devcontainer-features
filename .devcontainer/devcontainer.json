@@ -21,6 +21,8 @@
         "vscode": {
             "extensions": [
                 // "mhutchie.git-graph",
+                // "GitHub.copilot",
+                // "Codeium.codeium",
             ]
         }
     },
