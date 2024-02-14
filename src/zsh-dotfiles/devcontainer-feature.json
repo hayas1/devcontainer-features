@@ -1,6 +1,6 @@
 {
     "id": "zsh-dotfiles",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "name": "zsh-dotfiles",
     "documentationURL": "https://github.com/hayas1/devcontainer-features/tree/main/src/zsh-dotfiles",
     "description": "Setup zsh-dotfiles",
@@ -66,8 +66,7 @@
                 "rangav.vscode-thunder-client",
                 "naumovs.color-highlight",
                 "GitHub.vscode-github-actions",
-                "GitHub.vscode-pull-request-github",
-                "GitHub.copilot"
+                "GitHub.vscode-pull-request-github"
             ]
         }
     },
