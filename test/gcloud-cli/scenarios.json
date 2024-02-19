@@ -14,16 +14,6 @@
             }
         }
     },
-    "install_with_version": {
-        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
-        "features": {
-            "gcloud-cli": {
-                "version": "463.0.0-0",
-                "with-kubectl": "1.28.2-00",
-                "with-helm": "3.14.0-1"
-            }
-        }
-    },
     "install_with_bash_completion": {
         "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
         "features": {
