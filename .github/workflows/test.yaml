@@ -28,7 +28,7 @@ jobs:
           - mcr.microsoft.com/vscode/devcontainers/base:0-bullseye
           - mcr.microsoft.com/devcontainers/base:ubuntu
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install latest devcontainer CLI
         run: npm install -g @devcontainers/cli
       - name: Testing '${{ matrix.features }}' against '${{ matrix.baseImage }}'
@@ -48,7 +48,7 @@ jobs:
           - tfenv
           - pyenv
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install latest devcontainer CLI
         run: npm install -g @devcontainers/cli
       - name: Testing '${{ matrix.features }}' scenarios
@@ -58,7 +58,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install latest devcontainer CLI
         run: npm install -g @devcontainers/cli
       - name: Testing global scenarios

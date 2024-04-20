@@ -11,7 +11,7 @@ jobs:
       contents: write
       packages: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Publish features
         uses: devcontainers/action@v1
         with:
@@ -26,7 +26,7 @@ jobs:
       contents: write
       packages: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/devcontainer
         with:
           username: ${{ github.repository_owner }}
@@ -36,7 +36,7 @@ jobs:
   script:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: check script
         run: |
           curl -fsL 'https://github.com/hayas1/devcontainer-features/raw/main/init.sh' |
