@@ -22,7 +22,7 @@
             "extensions": [
                 // "mhutchie.git-graph",
                 // "GitHub.copilot",
-                // "Codeium.codeium",
+                "Codeium.codeium",
                 // "TabNine.tabnine-vscode",
             ]
         }
@@ -49,6 +49,7 @@
         "ghcr.io/hayas1/devcontainer-features/powerlevel10k": {
             "plugin-manager": "oh-my-zsh"
         },
+        "ghcr.io/hayas1/devcontainer-features/cargo-tools": {},
         // "ghcr.io/hayas1/devcontainer-features/starship": {},
         // "ghcr.io/hayas1/devcontainer-features/sheldon": {},
         "ghcr.io/hayas1/devcontainer-features/gcloud-cli": {
