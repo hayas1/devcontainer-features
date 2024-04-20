@@ -15,7 +15,6 @@ jobs:
         features:
           - zsh-dotfiles
           - powerlevel10k
-          - cargo-tools
           - starship
           - sheldon
           - gcloud-cli
@@ -41,7 +40,6 @@ jobs:
         features:
           - zsh-dotfiles
           - powerlevel10k
-          - cargo-tools
           - starship
           - sheldon
           - gcloud-cli
