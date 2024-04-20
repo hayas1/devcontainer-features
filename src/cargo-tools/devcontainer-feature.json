@@ -1,0 +1,54 @@
+{
+    "id": "cargo-tools",
+    "version": "0.1.0",
+    "name": "cargo-tools",
+    "documentationURL": "https://github.com/hayas1/devcontainer-features/tree/main/src/cargo-tools",
+    "description": "Install some tools via cargo",
+    "options": {
+        "miniserve": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "none",
+                "0.27.1"
+            ],
+            "default": "latest",
+            "description": "install miniserve"
+        },
+        "cargo-readme": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "none",
+                "3.3.1"
+            ],
+            "default": "latest",
+            "description": "install cargo-readme"
+        },
+        "cargo-tarpaulin": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "none",
+                "0.28.0"
+            ],
+            "default": "latest",
+            "description": "install cargo-tarpaulin"
+        },
+        "tokei": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "none",
+                "12.1.2"
+            ],
+            "default": "latest",
+            "description": "install tokei"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils",
+        "ghcr.io/devcontainers/features/rust",
+        "ghcr.io/hayas1/devcontainer-features/zsh-dotfiles"
+    ]
+}
