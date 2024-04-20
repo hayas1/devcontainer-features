@@ -1,5 +1,7 @@
 name: Test devcontainer features
 on:
+  schedule:
+    - cron: 0 18 * * 5 # Fridy 18:00 UTC
   workflow_dispatch:
   push:
     branches: [main]
