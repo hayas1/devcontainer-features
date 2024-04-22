@@ -1,5 +1,6 @@
 #! /bin/bash -e
 
+# TODO do not run as root user
 cargo-install() {
     TOOL=$1
     VERSION=${2:-"latest"}
