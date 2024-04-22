@@ -15,6 +15,14 @@ if type go >/dev/null 2>&1; then
     go install -v golang.org/x/tools/gopls@latest
 fi
 
+# for develop with rust
+if type cargo >/dev/null 2>&1; then
+    cargo install miniserve
+    cargo install cargo-readme
+    cargo install cargo-tarpaulin
+    cargo install tokei
+fi
+
 # project settings
 # EXAMPLE:
 # npm install -g @devcontainers/cli
