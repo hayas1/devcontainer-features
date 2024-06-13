@@ -38,6 +38,7 @@ Setup zsh-dotfiles
 - `naumovs.color-highlight`
 - `GitHub.vscode-github-actions`
 - `GitHub.vscode-pull-request-github`
+- `corschenzi.mermaid-graphical-editor`
 
 
 
