@@ -17,7 +17,6 @@
     // "initializeCommand": "docker network inspect devcontainer-network >/dev/null 2>&1 || docker network create devcontainer-network",
     // "runArgs": [
     //     "--network=devcontainer-network",
-    //     "--name=vsc-devcontainer"
     // ],
     // "remoteEnv": {
     //     "PATH": "${containerEnv:PATH}:/home/vscode/bin"
