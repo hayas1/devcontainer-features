@@ -21,9 +21,8 @@
         "vscode": {
             "extensions": [
                 // "mhutchie.git-graph",
-                // "GitHub.copilot",
                 "Codeium.codeium",
-                // "TabNine.tabnine-vscode",
+                "saoudrizwan.claude-dev", // Cline
             ]
         }
     },
