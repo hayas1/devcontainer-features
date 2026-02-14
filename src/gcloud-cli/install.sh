@@ -40,10 +40,10 @@ fi
 
 # install helm https://helm.sh/docs/intro/install/#from-apt-debianubuntu
 if [ "$WITH_HELM" != "none" ]; then
-    curl https://baltocdn.com/helm/signing.asc |
-        gpg --dearmor | tee /usr/share/keyrings/helm.gpg >/dev/null
-    apt-get install apt-transport-https --yes
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" |
+    apt-get install curl gpg apt-transport-https --yes
+    curl -fsSL https://packages.buildkite.com/helm-linux/helm-debian/gpgkey |
+        gpg --dearmor | tee /usr/share/keyrings/helm.gpg > /dev/null
+    echo "deb [signed-by=/usr/share/keyrings/helm.gpg] https://packages.buildkite.com/helm-linux/helm-debian/any/ any main" |
         tee /etc/apt/sources.list.d/helm-stable-debian.list
     if [ "$WITH_KUBECTL" = "latest" ]; then
         apt-get update -y && apt-get -y install helm
