@@ -38,17 +38,8 @@ if [ "$WITH_KUBECTL" != "none" ]; then
     cat "./${COMPLETION}rc/kubectl.${COMPLETION}rc" >>"${_REMOTE_USER_HOME}/.${COMPLETION}rc"
 fi
 
-# install helm https://helm.sh/docs/intro/install/#from-apt-debianubuntu
+# install helm https://github.com/helm/helm/issues/31417
 if [ "$WITH_HELM" != "none" ]; then
-    apt-get install curl gpg apt-transport-https --yes
-    curl -fsSL https://packages.buildkite.com/helm-linux/helm-debian/gpgkey |
-        gpg --dearmor | tee /usr/share/keyrings/helm.gpg > /dev/null
-    echo "deb [signed-by=/usr/share/keyrings/helm.gpg] https://packages.buildkite.com/helm-linux/helm-debian/any/ any main" |
-        tee /etc/apt/sources.list.d/helm-stable-debian.list
-    if [ "$WITH_KUBECTL" = "latest" ]; then
-        apt-get update -y && apt-get -y install helm
-    else
-        apt-get update -y && apt-get -y install helm="${WITH_HELM}"
-    fi
+    curl -fsSL https://github.com/helm/helm/raw/main/scripts/get-helm-3 | bash
     cat "./${COMPLETION}rc/helm.${COMPLETION}rc" >>"${_REMOTE_USER_HOME}/.${COMPLETION}rc"
 fi
