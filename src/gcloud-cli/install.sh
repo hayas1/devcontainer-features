@@ -40,6 +40,10 @@ fi
 
 # install helm https://github.com/helm/helm/issues/31417
 if [ "$WITH_HELM" != "none" ]; then
-    curl -fsSL https://github.com/helm/helm/raw/main/scripts/get-helm-3 | bash
+    if [ "$WITH_HELM" = "latest" ]; then
+        curl -fsSL https://github.com/helm/helm/raw/main/scripts/get-helm-4 | bash
+    else
+        curl -fsSL https://github.com/helm/helm/raw/main/scripts/get-helm-"${WITH_HELM}" | bash
+    fi
     cat "./${COMPLETION}rc/helm.${COMPLETION}rc" >>"${_REMOTE_USER_HOME}/.${COMPLETION}rc"
 fi
