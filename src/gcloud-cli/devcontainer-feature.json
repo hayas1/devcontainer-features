@@ -30,7 +30,8 @@
             "proposals": [
                 "none",
                 "latest",
-                "3.12.0-1"
+                "3",
+                "4"
             ],
             "default": "none",
             "description": "install version of helm or none"

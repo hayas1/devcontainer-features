@@ -17,10 +17,10 @@ apt-get clean && rm -rf /var/lib/apt/lists
 printf '\n' >>"${_REMOTE_USER_HOME}/.${COMPLETION}rc"
 
 # install gcloud https://cloud.google.com/sdk/docs/install?hl=ja#deb
-echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" |
-    tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg |
-    apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+    gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" |
+    tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 if [ "$VERSION" = "latest" ]; then
     apt-get update -y && apt-get install -y google-cloud-sdk
 else
@@ -38,17 +38,12 @@ if [ "$WITH_KUBECTL" != "none" ]; then
     cat "./${COMPLETION}rc/kubectl.${COMPLETION}rc" >>"${_REMOTE_USER_HOME}/.${COMPLETION}rc"
 fi
 
-# install helm https://helm.sh/docs/intro/install/#from-apt-debianubuntu
+# install helm https://github.com/helm/helm/issues/31417
 if [ "$WITH_HELM" != "none" ]; then
-    curl https://baltocdn.com/helm/signing.asc |
-        gpg --dearmor | tee /usr/share/keyrings/helm.gpg >/dev/null
-    apt-get install apt-transport-https --yes
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" |
-        tee /etc/apt/sources.list.d/helm-stable-debian.list
-    if [ "$WITH_KUBECTL" = "latest" ]; then
-        apt-get update -y && apt-get -y install helm
+    if [ "$WITH_HELM" = "latest" ]; then
+        curl -fsSL https://github.com/helm/helm/raw/main/scripts/get-helm-4 | bash
     else
-        apt-get update -y && apt-get -y install helm="${WITH_HELM}"
+        curl -fsSL https://github.com/helm/helm/raw/main/scripts/get-helm-"${WITH_HELM}" | bash
     fi
     cat "./${COMPLETION}rc/helm.${COMPLETION}rc" >>"${_REMOTE_USER_HOME}/.${COMPLETION}rc"
 fi
