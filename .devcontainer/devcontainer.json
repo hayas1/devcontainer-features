@@ -13,6 +13,8 @@
         "source=${localEnv:HOME}/.aws/,target=/home/vscode/.aws/,type=bind",
         "source=${localEnv:HOME}/.kube/,target=/home/vscode/.kube/,type=bind",
         "source=${localEnv:HOME}/.helm/,target=/home/vscode/.helm/,type=bind",
+        "source=${localEnv:HOME}/.claude/,target=/home/vscode/.claude/,type=bind",
+        "source=${localEnv:HOME}/.codex/,target=/home/vscode/.codex/,type=bind",
     ],
     // "remoteEnv": {
     //     "PATH": "${containerEnv:PATH}:/home/vscode/bin"
@@ -22,7 +24,9 @@
             "extensions": [
                 // "mhutchie.git-graph",
                 "Codeium.codeium",
-                "saoudrizwan.claude-dev", // Cline
+                // "saoudrizwan.claude-dev", // Cline
+                "Anthropic.claude-code", // Claude code
+                "openai.chatgpt", // Codex
             ]
         }
     },
