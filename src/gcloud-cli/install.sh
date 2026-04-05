@@ -38,10 +38,10 @@ if [ "$WITH_KUBECTL" != "none" ]; then
     cat "./${COMPLETION}rc/kubectl.${COMPLETION}rc" >>"${_REMOTE_USER_HOME}/.${COMPLETION}rc"
 fi
 
-# install helm https://github.com/helm/helm/issues/31417
+# install helm https://github.com/helm/helm/raw/main/scripts/get-helm-3
 if [ "$WITH_HELM" != "none" ]; then
     if [ "$WITH_HELM" = "latest" ]; then
-        curl -fsSL https://github.com/helm/helm/raw/main/scripts/get-helm-4 | bash
+        curl -fsSL https://github.com/helm/helm/raw/main/scripts/get-helm-3 | bash
     else
         curl -fsSL https://github.com/helm/helm/raw/main/scripts/get-helm-"${WITH_HELM}" | bash
     fi
