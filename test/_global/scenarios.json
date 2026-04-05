@@ -1,6 +1,6 @@
 {
     "all_powerlevel10k": {
-        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "zsh-dotfiles": {
                 "plugin-manager": "oh-my-zsh",
@@ -41,7 +41,7 @@
         }
     },
     "all_starship_sheldon": {
-        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "zsh-dotfiles": {
                 "plugin-manager": "sheldon",

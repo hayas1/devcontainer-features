@@ -1,6 +1,6 @@
 {
     "install_with_omz": {
-        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "powerlevel10k": {
                 "plugin-manager": "oh-my-zsh"
@@ -8,7 +8,7 @@
         }
     },
     "install_with_sheldon": {
-        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "ghcr.io/hayas1/devcontainer-features/sheldon": {},
             "powerlevel10k": {
@@ -17,7 +17,7 @@
         }
     },
     "install_with_version": {
-        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "powerlevel10k": {
                 "version": "v1.18.0"

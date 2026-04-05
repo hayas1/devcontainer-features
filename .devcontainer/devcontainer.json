@@ -1,6 +1,6 @@
 {
     "name": "Debian",
-    "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
     "postCreateCommand": "test -e ${containerWorkspaceFolder}/.devcontainer/entry.sh && zsh ${containerWorkspaceFolder}/.devcontainer/entry.sh",
     "remoteUser": "vscode",
     "mounts": [

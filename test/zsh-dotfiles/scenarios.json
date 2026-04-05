@@ -1,6 +1,6 @@
 {
     "install_p10k_omz": {
-        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "zsh-dotfiles": {
                 "plugin-manager": "oh-my-zsh",
@@ -12,7 +12,7 @@
         }
     },
     "install_starship_sheldon": {
-        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "zsh-dotfiles": {
                 "plugin-manager": "sheldon",
@@ -24,7 +24,7 @@
         }
     },
     "install_p10k_theme_only": {
-        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "zsh-dotfiles": {
                 "plugin-manager": "without",
