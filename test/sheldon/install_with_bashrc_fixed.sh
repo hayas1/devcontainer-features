@@ -11,7 +11,7 @@ not() {
 }
 
 # Definition specific tests
-check "check for sheldon" sheldon --version | grep 'sheldon 0.7.2'
+check "check for sheldon 0.7.2" sheldon --version | grep 'sheldon 0.7.2'
 check "write bashrc" diff "${HOME}/.bashrc" "${tmp}/rc" | cut -c 1 | not grep '>'
 
 # Report result

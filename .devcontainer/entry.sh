@@ -23,6 +23,12 @@ if type cargo >/dev/null 2>&1; then
     cargo install tokei
 fi
 
+# for develop with node
+if type npm >/dev/null 2>&1; then
+    curl -fsSL https://claude.ai/install.sh | bash # https://code.claude.com/docs/ja/setup
+    npm i -g @openai/codex # https://developers.openai.com/codex/cli
+fi
+
 # project settings
 # EXAMPLE:
 # npm install -g @devcontainers/cli
