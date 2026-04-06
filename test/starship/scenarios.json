@@ -1,6 +1,6 @@
 {
     "install_with_zshrc": {
-        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "starship": {
                 "rc-file": ".zshrc"
@@ -8,7 +8,7 @@
         }
     },
     "install_with_bashrc": {
-        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "starship": {
                 "rc-file": ".bashrc"

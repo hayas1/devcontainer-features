@@ -11,7 +11,7 @@ not() {
 }
 
 # Definition specific tests
-check "install exa" exa --version
+check "install eza" eza --version
 check "install ripgrep" rg --version
 check "copy starship.toml" diff "${HOME}/.config/starship.toml" "${tmp}/home/config/starship.toml"
 check "copy sheldon/plugins.toml" diff "${HOME}/.config/sheldon/plugins.toml" "${tmp}/home/config/sheldon/plugins.toml"

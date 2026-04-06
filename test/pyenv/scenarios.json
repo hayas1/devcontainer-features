@@ -1,6 +1,6 @@
 {
     "install_with_latest_python": {
-        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "pyenv": {
                 "version": "latest",
@@ -9,7 +9,7 @@
         }
     },
     "install_with_python37": {
-        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "pyenv": {
                 "version": "master",
@@ -18,7 +18,7 @@
         }
     },
     "install_without_python": {
-        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "pyenv": {
                 "version": "master",
@@ -27,7 +27,7 @@
         }
     },
     "install_with_bashrc": {
-        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "pyenv": {
                 "rc-file": ".bashrc"

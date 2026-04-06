@@ -1,6 +1,6 @@
 {
     "id": "zsh-dotfiles",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "name": "zsh-dotfiles",
     "documentationURL": "https://github.com/hayas1/devcontainer-features/tree/main/src/zsh-dotfiles",
     "description": "Setup zsh-dotfiles",
@@ -33,7 +33,7 @@
         "with-tools": {
             "type": "boolean",
             "default": false,
-            "description": "if false, do not install zsh, git, sudo, exa, ripgrep and so on"
+            "description": "if false, do not install zsh, git, sudo, eza, ripgrep and so on"
         },
         "with-aliases": {
             "type": "boolean",

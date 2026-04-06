@@ -1,12 +1,12 @@
 {
     "install_only_gcloud": {
-        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "gcloud-cli": {}
         }
     },
     "install_kubectl_helm": {
-        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "gcloud-cli": {
                 "with-kubectl": "latest",
@@ -15,7 +15,7 @@
         }
     },
     "install_with_version": {
-        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "gcloud-cli": {
                 "version": "463.0.0-0",
@@ -25,7 +25,7 @@
         }
     },
     "install_with_bash_completion": {
-        "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
             "gcloud-cli": {
                 "with-kubectl": "latest",

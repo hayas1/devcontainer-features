@@ -1,6 +1,6 @@
 {
     "name": "Debian",
-    "image": "mcr.microsoft.com/vscode/devcontainers/base:0-bullseye",
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
     "postCreateCommand": "test -e ${containerWorkspaceFolder}/.devcontainer/entry.sh && zsh ${containerWorkspaceFolder}/.devcontainer/entry.sh",
     "remoteUser": "vscode",
     "mounts": [
@@ -31,7 +31,10 @@
         }
     },
     "features": {
-        "ghcr.io/devcontainers/features/docker-outside-of-docker": "latest",
+        "ghcr.io/devcontainers/features/docker-outside-of-docker": {
+            "version": "latest",
+            "moby": false // https://github.com/devcontainers/features/issues/1059
+        },
         // "ghcr.io/devcontainers/features/python": {
         //     "version": "latest",
         //     "httpProxy": "${localEnv:http_proxy}"
