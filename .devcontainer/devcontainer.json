@@ -31,7 +31,10 @@
         }
     },
     "features": {
-        "ghcr.io/devcontainers/features/docker-outside-of-docker": "latest",
+        "ghcr.io/devcontainers/features/docker-outside-of-docker": {
+            "version": "latest",
+            "moby": false // https://github.com/devcontainers/features/issues/1059
+        },
         // "ghcr.io/devcontainers/features/python": {
         //     "version": "latest",
         //     "httpProxy": "${localEnv:http_proxy}"
