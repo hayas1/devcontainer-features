@@ -2,4 +2,4 @@
 Dev Container custom Features.
 
 ## Operation
-- When modifying files under` src/`, bump the version in `devcontainer-feature.json`
+- When modifying files under `src/`, bump the version in `devcontainer-feature.json`
