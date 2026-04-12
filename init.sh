@@ -11,6 +11,10 @@ if [[ ! -e "${DEVCONTAINER_DIR}" ]]; then
     curl -fsL 'https://github.com/hayas1/devcontainer-features/raw/main/.devcontainer/entry.sh' \
         -o "${DEVCONTAINER_DIR}/entry.sh"
     echo '*' >"${DEVCONTAINER_DIR}/.gitignore"
+else
+    echo "Error: ${DEVCONTAINER_DIR} already exists." >&2
+    echo "Please remove or rename it and retry." >&2
+    exit 1
 fi
 
 # prepare mount source in home directory (# TODO parse json-with-comment)
