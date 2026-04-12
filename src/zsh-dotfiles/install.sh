@@ -57,7 +57,7 @@ esac
 
 if [ "$WITH_TOOLS" = "true" ]; then
     apt-get update -y && apt-get upgrade -y &&
-        apt-get install -y zsh wget git procps htop connect-proxy sudo \
+        apt-get install -y zsh wget git procps htop connect-proxy sudo tmux \
             eza ripgrep fd-find bat hexyl &&
         apt-get clean && rm -rf /var/lib/apt/lists
 fi
