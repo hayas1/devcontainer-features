@@ -18,7 +18,7 @@ Setup zsh-dotfiles
 | plugin-manager | used plugin manager (will be installed other feature) | string | without |
 | theme | used theme (will be installed other feature) | string | without |
 | with-plugins | if false, do not install zsh-completions, zsh-autosuggestions, and so on | boolean | false |
-| with-tools | if false, do not install zsh, git, sudo, eza, ripgrep and so on | boolean | false |
+| with-tools | if false, do not install zsh, git, sudo, eza, ripgrep, tmux and so on | boolean | false |
 | with-aliases | if false, do not set aliases | boolean | false |
 
 ## Customizations
