@@ -33,7 +33,7 @@
         "with-tools": {
             "type": "boolean",
             "default": false,
-            "description": "if false, do not install zsh, git, sudo, eza, ripgrep, tmux and so on"
+            "description": "if false, do not install zsh, git, sudo, tmux, eza, ripgrep and so on"
         },
         "with-aliases": {
             "type": "boolean",
