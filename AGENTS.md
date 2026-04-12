@@ -1,5 +1,5 @@
 # devcontainer-features
-Maintaining custom features for devcontainer
+Dev Container custom Features.
 
-## operation
-- If you make changes to the `src/` directory, update the version listed in `devcontainer-feature.json`
+## Operation
+- When modifying files under` src/`, bump the version in `devcontainer-feature.json`
