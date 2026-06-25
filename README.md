@@ -15,17 +15,17 @@ curl -fsL 'https://github.com/hayas1/devcontainer-features/raw/main/init.sh' | b
 
 ## Nerd Font Setup (recommended)
 
-`powerlevel10k` や `starship` のグリフを正しく表示するには、ホスト側に Nerd Font が必要です。
+Some features (e.g. `powerlevel10k`, `starship`) require a Nerd Font installed on the host to render glyphs correctly.
 
-### 1. インストール
+### 1. Install
 
 ```sh
 brew install --cask font-hack-nerd-font
 ```
 
-### 2. VSCode の設定
+### 2. Configure VSCode
 
-`settings.json` (`Cmd+Shift+P` → `Open User Settings (JSON)`) に追記:
+Add to `settings.json` (`Cmd+Shift+P` → `Open User Settings (JSON)`):
 
 ```json
 {
@@ -34,6 +34,4 @@ brew install --cask font-hack-nerd-font
 }
 ```
 
-`editor.fontFamily` の先頭に `'Hack Nerd Font'` を追加するだけでもOKです。
-
-![VSCode font family setting](docs/images/vscode-font-family.png)
+Just placing `'Hack Nerd Font'` at the front of `editor.fontFamily` is enough.
