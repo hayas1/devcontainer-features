@@ -16,7 +16,7 @@ fi
 apt-get clean && rm -rf /var/lib/apt/lists
 printf '\n' >>"${_REMOTE_USER_HOME}/.${COMPLETION}rc"
 
-# install gcloud https://cloud.google.com/sdk/docs/install?hl=ja#deb
+# install gcloud https://cloud.google.com/sdk/docs/install#deb
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg |
     gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" |
@@ -28,7 +28,7 @@ else
 fi
 cat "./${COMPLETION}rc/gcloud.${COMPLETION}rc" >>"${_REMOTE_USER_HOME}/.${COMPLETION}rc"
 
-# install kubectl https://cloud.google.com/sdk/docs/install?hl=ja#deb-additional
+# install kubectl https://cloud.google.com/sdk/docs/install#deb-additional
 if [ "$WITH_KUBECTL" != "none" ]; then
     if [ "$WITH_KUBECTL" = "latest" ]; then
         apt-get install -y kubectl
