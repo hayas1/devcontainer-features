@@ -4,6 +4,16 @@ WITH_KUBECTL=${WITH_KUBECTL:-"none"}
 WITH_HELM=${WITH_HELM:-"none"}
 COMPLETION=${COMPLETION:-"zsh"}
 
+# install a pinned apt package, listing what the repository actually has when the pin does not exist
+apt_install_version() {
+    local package="$1" version="$2"
+    if ! apt-get install -y "${package}=${version}"; then
+        echo "gcloud-cli: version '${version}' of '${package}' is not available, available versions are:" >&2
+        apt-cache madison "${package}" >&2
+        return 1
+    fi
+}
+
 # for test
 tmp=/tmp/devcontainer-feature-gcloud-cli/test
 mkdir -p "$tmp" && cp -r . "$tmp"
@@ -24,7 +34,7 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.clou
 if [ "$VERSION" = "latest" ]; then
     apt-get update -y && apt-get install -y google-cloud-cli
 else
-    apt-get update -y && apt-get install -y google-cloud-cli="${VERSION}"
+    apt-get update -y && apt_install_version google-cloud-cli "${VERSION}"
 fi
 cat "./${COMPLETION}rc/gcloud.${COMPLETION}rc" >>"${_REMOTE_USER_HOME}/.${COMPLETION}rc"
 
@@ -33,7 +43,7 @@ if [ "$WITH_KUBECTL" != "none" ]; then
     if [ "$WITH_KUBECTL" = "latest" ]; then
         apt-get install -y kubectl
     else
-        apt-get install -y kubectl="${WITH_KUBECTL}"
+        apt_install_version kubectl "${WITH_KUBECTL}"
     fi
     cat "./${COMPLETION}rc/kubectl.${COMPLETION}rc" >>"${_REMOTE_USER_HOME}/.${COMPLETION}rc"
 fi
