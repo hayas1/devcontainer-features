@@ -1,6 +1,6 @@
 {
     "id": "gcloud-cli",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "gcloud-cli",
     "documentationURL": "https://github.com/hayas1/devcontainer-features/tree/main/src/gcloud-cli",
     "description": "Install [gcloud-cli](https://cloud.google.com/sdk/gcloud) with [kubectl](https://github.com/kubernetes/kubectl) and [helm](https://github.com/helm/helm) (optional)",
@@ -9,8 +9,8 @@
             "type": "string",
             "proposals": [
                 "latest",
-                "433.0.1-0",
-                "323.0.0-0"
+                "584.0.0-0",
+                "539.0.0-0"
             ],
             "default": "latest",
             "description": "install version of gcloud-cli"
@@ -20,7 +20,7 @@
             "proposals": [
                 "none",
                 "latest",
-                "1.27.2-00"
+                "1:584.0.0-0"
             ],
             "default": "none",
             "description": "install version of kubectl or none"
