@@ -1,6 +1,6 @@
 {
     "id": "sheldon",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "name": "sheldon",
     "documentationURL": "https://github.com/hayas1/devcontainer-features/tree/main/src/sheldon",
     "description": "Install [sheldon](https://github.com/rossmacarthur/sheldon)",
@@ -9,8 +9,8 @@
             "type": "string",
             "proposals": [
                 "latest",
-                "0.7.3",
-                "0.7.2"
+                "0.8.5",
+                "0.8.4"
             ],
             "default": "latest",
             "description": "release version to install"
