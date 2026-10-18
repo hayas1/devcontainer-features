@@ -5,6 +5,12 @@ echo "change home directory ${HOME} owner to ${USER}..."
 sudo chown -R "${USER}:${USER}" "${HOME}"
 echo "done"
 
+# coding agents first, so that they are available as soon as possible
+curl -fsSL https://claude.ai/install.sh | bash # https://code.claude.com/docs/ja/setup
+if type npm >/dev/null 2>&1; then
+    npm i -g @openai/codex # https://developers.openai.com/codex/cli
+fi
+
 # for develop with python
 if [ -e "./requirements.txt" ]; then
     pip install -r "./requirements.txt"
@@ -21,12 +27,6 @@ if type cargo >/dev/null 2>&1; then
     cargo install cargo-readme
     cargo install cargo-tarpaulin
     cargo install tokei
-fi
-
-# for develop with node
-if type npm >/dev/null 2>&1; then
-    curl -fsSL https://claude.ai/install.sh | bash # https://code.claude.com/docs/ja/setup
-    npm i -g @openai/codex # https://developers.openai.com/codex/cli
 fi
 
 # project settings
