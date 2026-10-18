@@ -12,3 +12,15 @@ Or run next command.
 ```sh
 curl -fsL 'https://github.com/hayas1/devcontainer-features/raw/main/init.sh' | bash
 ```
+
+### workspace on docker volume
+Bind mount of workspace folder can be slow (e.g. Docker Desktop on macOS / Windows). [volume/devcontainer.json](./.devcontainer/volume/devcontainer.json) puts the workspace on a docker volume (`<folder name>-workspace`) instead.
+- `initializeCommand` writes the `origin` remote url of the local folder into `.devcontainer/.remote-url`
+- `postCreateCommand` runs [clone.sh](./.devcontainer/clone.sh), which clones the repository into the volume (only when not cloned yet)
+- `.devcontainer/` and `.vscode/` are still bind mounted from the local folder, other files are not synced with the local folder
+
+Copy it as `.devcontainer/devcontainer.json` with [clone.sh](./.devcontainer/clone.sh) and [entry.sh](./.devcontainer/entry.sh), or run next command.
+```sh
+curl -fsL 'https://github.com/hayas1/devcontainer-features/raw/main/init.sh' | WORKSPACE_MOUNT=volume bash
+```
+To recreate the workspace from scratch, remove the volume by `docker volume rm <folder name>-workspace`.

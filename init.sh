@@ -2,18 +2,27 @@
 
 REPOSITORY="$(dirname "$(realpath "$0")")"
 DEVCONTAINER_DIR=${DEVCONTAINER_DIR:-"${REPOSITORY}/.devcontainer"}
+WORKSPACE_MOUNT=${WORKSPACE_MOUNT:-"bind"} # bind or volume
 
 # prepare .devconotainer directory in workspace directory
 if [[ ! -e "${DEVCONTAINER_DIR}" ]]; then
     mkdir -p "${DEVCONTAINER_DIR}"
-    curl -fsL 'https://github.com/hayas1/devcontainer-features/raw/main/.devcontainer/devcontainer.json' \
-        -o "${DEVCONTAINER_DIR}/devcontainer.json"
+    if [[ "${WORKSPACE_MOUNT}" == "volume" ]]; then
+        curl -fsL 'https://github.com/hayas1/devcontainer-features/raw/main/.devcontainer/volume/devcontainer.json' \
+            -o "${DEVCONTAINER_DIR}/devcontainer.json"
+        curl -fsL 'https://github.com/hayas1/devcontainer-features/raw/main/.devcontainer/clone.sh' \
+            -o "${DEVCONTAINER_DIR}/clone.sh"
+    else
+        curl -fsL 'https://github.com/hayas1/devcontainer-features/raw/main/.devcontainer/devcontainer.json' \
+            -o "${DEVCONTAINER_DIR}/devcontainer.json"
+    fi
     curl -fsL 'https://github.com/hayas1/devcontainer-features/raw/main/.devcontainer/entry.sh' \
         -o "${DEVCONTAINER_DIR}/entry.sh"
     echo '*' >"${DEVCONTAINER_DIR}/.gitignore"
 fi
 
 # prepare mount source in home directory (# TODO parse json-with-comment)
+localWorkspaceFolder="$(dirname "${DEVCONTAINER_DIR}")"
 sources="$(
     grep -E '^\s*"source=(.*)"' <"${DEVCONTAINER_DIR}/devcontainer.json" |
         sed -r 's/^\s*"source=(.*),target=(.*)"\s*,?.*$/\1/' |
