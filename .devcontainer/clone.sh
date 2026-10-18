@@ -1,7 +1,7 @@
 #! /bin/bash -e
 set -e
 
-# clone the repository into the workspace volume (used by volume/devcontainer.json)
+# clone the repository into the workspace volume (used by devcontainer.json)
 WORKSPACE=${WORKSPACE:-"$(dirname "$(dirname "$(realpath "$0")")")"}
 REMOTE_URL=${REMOTE_URL:-"$(cat "${WORKSPACE}/.devcontainer/.remote-url" 2>/dev/null || true)"}
 

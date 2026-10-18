@@ -2,22 +2,17 @@
 
 REPOSITORY="$(dirname "$(realpath "$0")")"
 DEVCONTAINER_DIR=${DEVCONTAINER_DIR:-"${REPOSITORY}/.devcontainer"}
-WORKSPACE_MOUNT=${WORKSPACE_MOUNT:-"bind"} # bind or volume
+DEVCONTAINER_REF=${DEVCONTAINER_REF:-"main"} # branch, tag, or commit hash of hayas1/devcontainer-features
+DEVCONTAINER_URL="https://github.com/hayas1/devcontainer-features/raw/${DEVCONTAINER_REF}/.devcontainer"
 
 # prepare .devconotainer directory in workspace directory
 if [[ ! -e "${DEVCONTAINER_DIR}" ]]; then
     mkdir -p "${DEVCONTAINER_DIR}"
-    if [[ "${WORKSPACE_MOUNT}" == "volume" ]]; then
-        curl -fsL 'https://github.com/hayas1/devcontainer-features/raw/main/.devcontainer/volume/devcontainer.json' \
-            -o "${DEVCONTAINER_DIR}/devcontainer.json"
-        curl -fsL 'https://github.com/hayas1/devcontainer-features/raw/main/.devcontainer/clone.sh' \
-            -o "${DEVCONTAINER_DIR}/clone.sh"
-    else
-        curl -fsL 'https://github.com/hayas1/devcontainer-features/raw/main/.devcontainer/devcontainer.json' \
-            -o "${DEVCONTAINER_DIR}/devcontainer.json"
+    curl -fsL "${DEVCONTAINER_URL}/devcontainer.json" -o "${DEVCONTAINER_DIR}/devcontainer.json"
+    curl -fsL "${DEVCONTAINER_URL}/entry.sh" -o "${DEVCONTAINER_DIR}/entry.sh"
+    if grep -q 'clone.sh' "${DEVCONTAINER_DIR}/devcontainer.json"; then
+        curl -fsL "${DEVCONTAINER_URL}/clone.sh" -o "${DEVCONTAINER_DIR}/clone.sh"
     fi
-    curl -fsL 'https://github.com/hayas1/devcontainer-features/raw/main/.devcontainer/entry.sh' \
-        -o "${DEVCONTAINER_DIR}/entry.sh"
     echo '*' >"${DEVCONTAINER_DIR}/.gitignore"
 fi
 

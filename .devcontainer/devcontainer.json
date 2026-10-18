@@ -1,9 +1,17 @@
 {
     "name": "Debian",
     "image": "mcr.microsoft.com/devcontainers/base:debian",
-    "postCreateCommand": "test -e ${containerWorkspaceFolder}/.devcontainer/entry.sh && zsh ${containerWorkspaceFolder}/.devcontainer/entry.sh",
+    // Put the workspace on a docker volume instead of binding the local folder (bind mount is slow on some hosts).
+    // The repository is cloned into the volume by clone.sh from the `origin` remote of the local folder,
+    // and only .devcontainer/ and .vscode/ are bound from the local folder.
+    "workspaceMount": "source=${localWorkspaceFolderBasename}-workspace,target=/workspaces/${localWorkspaceFolderBasename},type=volume",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "initializeCommand": "git -C \"${localWorkspaceFolder}\" remote get-url origin > \"${localWorkspaceFolder}/.devcontainer/.remote-url\" || true",
+    "postCreateCommand": "bash ${containerWorkspaceFolder}/.devcontainer/clone.sh && test -e ${containerWorkspaceFolder}/.devcontainer/entry.sh && zsh ${containerWorkspaceFolder}/.devcontainer/entry.sh",
     "remoteUser": "vscode",
     "mounts": [
+        "source=${localWorkspaceFolder}/.devcontainer/,target=${containerWorkspaceFolder}/.devcontainer/,type=bind",
+        "source=${localWorkspaceFolder}/.vscode/,target=${containerWorkspaceFolder}/.vscode/,type=bind",
         // "source=${localEnv:HOME}/bin/,target=/home/vscode/bin/,type=bind",
         "source=${localEnv:HOME}/.ssh/,target=/home/vscode/.ssh/,type=bind",
         "source=${localEnv:HOME}/.zsh_history,target=/home/vscode/.zsh_history,type=bind",
@@ -16,7 +24,7 @@
         "source=${localEnv:HOME}/.claude/,target=/home/vscode/.claude/,type=bind",
         "source=${localEnv:HOME}/.codex/,target=/home/vscode/.codex/,type=bind",
     ],
-    // "initializeCommand": "docker network inspect devcontainer-network >/dev/null 2>&1 || docker network create devcontainer-network",
+    // (to use network, append to initializeCommand above) "; docker network inspect devcontainer-network >/dev/null 2>&1 || docker network create devcontainer-network",
     // "runArgs": [
     //     "--network=devcontainer-network",
     // ],
