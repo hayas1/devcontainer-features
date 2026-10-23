@@ -12,3 +12,26 @@ Or run next command.
 ```sh
 curl -fsL 'https://github.com/hayas1/devcontainer-features/raw/main/init.sh' | bash
 ```
+
+## Nerd Font Setup (recommended)
+
+Some features (e.g. `powerlevel10k`, `starship`) require a Nerd Font installed on the host to render glyphs correctly.
+
+### 1. Install
+
+```sh
+brew install --cask font-hack-nerd-font
+```
+
+### 2. Configure VSCode
+
+Add to `settings.json` (`Cmd+Shift+P` → `Open User Settings (JSON)`):
+
+```json
+{
+  "editor.fontFamily": "'Hack Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+  "terminal.integrated.fontFamily": "'Hack Nerd Font'"
+}
+```
+
+Just placing `'Hack Nerd Font'` at the front of `editor.fontFamily` is enough.
